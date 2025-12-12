@@ -11,52 +11,57 @@
     "2025-12-11"
   ],
   "varieties": [
-    "02",
+    "02 QTY 24000 TO 28000",
     "04",
-    "043",
+    "043 14000 TO 18000 TO 20000",
     "06",
     "08",
-    "10000",
-    "102 QTY",
-    "12000",
+    "10000 BAGS",
+    "12000 BAGS",
     "13",
-    "2043",
     "24",
     "2IA1",
-    "30000",
+    "30000 BAGS",
+    "30000 BAGS SALES APPROX",
     "34000",
-    "40000",
-    "531",
-    "531QTY",
-    "5531",
-    "553LQTY",
+    "40000 BAGS SALES APPROX",
+    "531 FATKI 8000 TO 11500",
+    "531QTY 12500 TO 16000",
+    "553LQTY 13000",
+    "553LQTY 16000",
     "5581",
-    "80000",
-    "AIC",
-    "AJC",
-    "APPROX",
-    "BAGS",
+    "5581 QTY 12500",
+    "80000 BAGS SALES APPROX",
+    "AIC QTY ARRIVALS APPROX 30000 BAGS SALES APPROX 10000 BAGS",
+    "AJC QTY ARRIVALS APPROX 12000 BAGS SALES APPROX 5000 BAGS",
+    "APPROX 10000 BAGS",
+    "BAGS SALES APPROX 20000 BAGS",
+    "BAGS SALES APPROX 8000 BAGS",
+    "BYADGI (KDL) BEST",
+    "BYADGI (KDL) DLX",
+    "BYADGI (KDL) FATKI",
+    "BYADGI (KDL) MEDIUM",
+    "BYADGI (KDL) MEDIUM BEST",
     "BYADGI FATKI",
     "DABB",
-    "DABBI BEST",
-    "DABBI DLX",
-    "DABBI MEDIUM BEST",
     "DABE",
-    "DABEI",
-    "DD",
-    "DL",
-    "DLX",
-    "KDL",
-    "KDL BEST",
-    "KDL DLX",
-    "KDL MEDIUM BEST",
+    "DABEI 18000",
+    "DEVANUR DELUXE (DD)",
+    "DL BEST 24000 TO 29000",
+    "DL FATKI 5500 TO 7500",
+    "DL MEDIUM 10000 TO 14000 TO 17000",
+    "DLX 21000",
+    "KASHMIRI (DABBI)",
+    "KDL 35000",
     "LOCAL KDL",
-    "NAYA",
-    "SEED FATKI",
-    "SEED QTY"
+    "NAYA MAAL ME 1000",
+    "SEED QTY",
+    "SYNGENTA 102",
+    "SYNGENTA 2043",
+    "SYNGENTA 5531"
   ],
   "ac_prices": {
-    "02": [
+    "02 QTY 24000 TO 28000": [
       null,
       null,
       null,
@@ -78,7 +83,7 @@
       null,
       null
     ],
-    "043": [
+    "043 14000 TO 18000 TO 20000": [
       null,
       null,
       null,
@@ -111,7 +116,7 @@
       2025.0,
       null
     ],
-    "10000": [
+    "10000 BAGS": [
       null,
       null,
       null,
@@ -122,18 +127,7 @@
       null,
       null
     ],
-    "102 QTY": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "12000": [
+    "12000 BAGS": [
       null,
       null,
       null,
@@ -154,17 +148,6 @@
       null,
       null,
       null
-    ],
-    "2043": [
-      2043.0,
-      2043.0,
-      17500.0,
-      17500.0,
-      null,
-      17000.0,
-      15000.0,
-      null,
-      21000.0
     ],
     "24": [
       null,
@@ -188,9 +171,20 @@
       null,
       null
     ],
-    "30000": [
+    "30000 BAGS": [
       30000.0,
       30000.0,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "30000 BAGS SALES APPROX": [
+      null,
+      null,
       null,
       null,
       null,
@@ -210,7 +204,7 @@
       null,
       null
     ],
-    "40000": [
+    "40000 BAGS SALES APPROX": [
       40000.0,
       null,
       null,
@@ -221,7 +215,7 @@
       null,
       null
     ],
-    "531": [
+    "531 FATKI 8000 TO 11500": [
       null,
       null,
       null,
@@ -232,7 +226,7 @@
       null,
       null
     ],
-    "531QTY": [
+    "531QTY 12500 TO 16000": [
       null,
       null,
       null,
@@ -243,18 +237,18 @@
       null,
       null
     ],
-    "5531": [
-      14000.0,
-      13000.0,
-      13000.0,
-      13000.0,
+    "553LQTY 13000": [
       null,
-      5531.0,
-      12000.0,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
       null,
       null
     ],
-    "553LQTY": [
+    "553LQTY 16000": [
       null,
       null,
       null,
@@ -276,7 +270,18 @@
       null,
       null
     ],
-    "80000": [
+    "5581 QTY 12500": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "80000 BAGS SALES APPROX": [
       null,
       80000.0,
       null,
@@ -287,7 +292,7 @@
       null,
       null
     ],
-    "AIC": [
+    "AIC QTY ARRIVALS APPROX 30000 BAGS SALES APPROX 10000 BAGS": [
       null,
       null,
       null,
@@ -298,7 +303,7 @@
       null,
       null
     ],
-    "AJC": [
+    "AJC QTY ARRIVALS APPROX 12000 BAGS SALES APPROX 5000 BAGS": [
       null,
       null,
       null,
@@ -309,7 +314,7 @@
       null,
       null
     ],
-    "APPROX": [
+    "APPROX 10000 BAGS": [
       null,
       null,
       null,
@@ -320,7 +325,7 @@
       null,
       null
     ],
-    "BAGS": [
+    "BAGS SALES APPROX 20000 BAGS": [
       null,
       null,
       20000.0,
@@ -329,7 +334,73 @@
       null,
       null,
       null,
+      null
+    ],
+    "BAGS SALES APPROX 8000 BAGS": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
       8000.0
+    ],
+    "BYADGI (KDL) BEST": [
+      25000.0,
+      31000.0,
+      null,
+      21000.0,
+      null,
+      null,
+      17500.0,
+      null,
+      24000.0
+    ],
+    "BYADGI (KDL) DLX": [
+      28000.0,
+      35000.0,
+      null,
+      29000.0,
+      null,
+      null,
+      22500.0,
+      null,
+      null
+    ],
+    "BYADGI (KDL) FATKI": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "BYADGI (KDL) MEDIUM": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "BYADGI (KDL) MEDIUM BEST": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      19000.0
     ],
     "BYADGI FATKI": [
       6750.0,
@@ -353,39 +424,6 @@
       null,
       null
     ],
-    "DABBI BEST": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      25500.0
-    ],
-    "DABBI DLX": [
-      32750.0,
-      46000.0,
-      null,
-      34000.0,
-      null,
-      null,
-      30500.0,
-      null,
-      null
-    ],
-    "DABBI MEDIUM BEST": [
-      26500.0,
-      32000.0,
-      18000.0,
-      20500.0,
-      null,
-      null,
-      17000.0,
-      null,
-      17000.0
-    ],
     "DABE": [
       null,
       null,
@@ -397,7 +435,7 @@
       null,
       null
     ],
-    "DABEI": [
+    "DABEI 18000": [
       null,
       null,
       null,
@@ -408,7 +446,7 @@
       null,
       null
     ],
-    "DD": [
+    "DEVANUR DELUXE (DD)": [
       null,
       null,
       null,
@@ -419,7 +457,7 @@
       null,
       null
     ],
-    "DL": [
+    "DL BEST 24000 TO 29000": [
       null,
       null,
       null,
@@ -430,7 +468,29 @@
       null,
       null
     ],
-    "DLX": [
+    "DL FATKI 5500 TO 7500": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "DL MEDIUM 10000 TO 14000 TO 17000": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "DLX 21000": [
       22500.0,
       null,
       null,
@@ -441,7 +501,18 @@
       null,
       null
     ],
-    "KDL": [
+    "KASHMIRI (DABBI)": [
+      32750.0,
+      46000.0,
+      18000.0,
+      34000.0,
+      null,
+      null,
+      30500.0,
+      null,
+      25500.0
+    ],
+    "KDL 35000": [
       null,
       null,
       null,
@@ -451,39 +522,6 @@
       null,
       null,
       null
-    ],
-    "KDL BEST": [
-      25000.0,
-      31000.0,
-      null,
-      21000.0,
-      null,
-      null,
-      17500.0,
-      null,
-      24000.0
-    ],
-    "KDL DLX": [
-      28000.0,
-      35000.0,
-      null,
-      29000.0,
-      null,
-      null,
-      22500.0,
-      null,
-      null
-    ],
-    "KDL MEDIUM BEST": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      19000.0
     ],
     "LOCAL KDL": [
       null,
@@ -496,22 +534,11 @@
       null,
       null
     ],
-    "NAYA": [
+    "NAYA MAAL ME 1000": [
       null,
       null,
       null,
       null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "SEED FATKI": [
-      8500.0,
-      8500.0,
-      null,
-      8500.0,
       null,
       null,
       null,
@@ -519,19 +546,52 @@
       null
     ],
     "SEED QTY": [
-      14500.0,
-      14750.0,
+      8500.0,
+      8500.0,
       null,
-      14750.0,
+      8500.0,
       null,
       null,
       13000.0,
       null,
       null
+    ],
+    "SYNGENTA 102": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "SYNGENTA 2043": [
+      2043.0,
+      2043.0,
+      17500.0,
+      17500.0,
+      null,
+      17000.0,
+      15000.0,
+      null,
+      21000.0
+    ],
+    "SYNGENTA 5531": [
+      14000.0,
+      13000.0,
+      13000.0,
+      13000.0,
+      null,
+      5531.0,
+      12000.0,
+      null,
+      null
     ]
   },
   "new_prices": {
-    "02": [
+    "02 QTY 24000 TO 28000": [
       null,
       null,
       null,
@@ -553,7 +613,7 @@
       null,
       null
     ],
-    "043": [
+    "043 14000 TO 18000 TO 20000": [
       null,
       null,
       null,
@@ -586,7 +646,7 @@
       null,
       null
     ],
-    "10000": [
+    "10000 BAGS": [
       null,
       null,
       null,
@@ -597,18 +657,7 @@
       null,
       null
     ],
-    "102 QTY": [
-      null,
-      27000.0,
-      102.0,
-      24000.0,
-      24000.0,
-      102.0,
-      null,
-      24000.0,
-      24000.0
-    ],
-    "12000": [
+    "12000 BAGS": [
       null,
       null,
       null,
@@ -629,17 +678,6 @@
       null,
       null,
       null
-    ],
-    "2043": [
-      null,
-      null,
-      null,
-      null,
-      17000.0,
-      2043.0,
-      null,
-      14000.0,
-      17000.0
     ],
     "24": [
       null,
@@ -663,7 +701,18 @@
       null,
       null
     ],
-    "30000": [
+    "30000 BAGS": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "30000 BAGS SALES APPROX": [
       null,
       null,
       null,
@@ -685,7 +734,7 @@
       null,
       null
     ],
-    "40000": [
+    "40000 BAGS SALES APPROX": [
       null,
       null,
       null,
@@ -696,7 +745,7 @@
       null,
       null
     ],
-    "531": [
+    "531 FATKI 8000 TO 11500": [
       null,
       null,
       null,
@@ -707,7 +756,7 @@
       null,
       null
     ],
-    "531QTY": [
+    "531QTY 12500 TO 16000": [
       null,
       null,
       null,
@@ -718,22 +767,22 @@
       null,
       null
     ],
-    "5531": [
+    "553LQTY 13000": [
       null,
       null,
-      5531.0,
-      8500.0,
-      5531.0,
-      5531.0,
       null,
-      8000.0,
-      8000.0
+      14000.0,
+      null,
+      null,
+      null,
+      null,
+      null
     ],
-    "553LQTY": [
+    "553LQTY 16000": [
       null,
       17000.0,
       null,
-      14000.0,
+      null,
       null,
       null,
       null,
@@ -748,10 +797,21 @@
       12000.0,
       null,
       null,
+      null,
+      null
+    ],
+    "5581 QTY 12500": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
       12500.0,
       null
     ],
-    "80000": [
+    "80000 BAGS SALES APPROX": [
       null,
       null,
       null,
@@ -762,7 +822,7 @@
       null,
       null
     ],
-    "AIC": [
+    "AIC QTY ARRIVALS APPROX 30000 BAGS SALES APPROX 10000 BAGS": [
       null,
       null,
       null,
@@ -773,7 +833,7 @@
       null,
       null
     ],
-    "AJC": [
+    "AJC QTY ARRIVALS APPROX 12000 BAGS SALES APPROX 5000 BAGS": [
       null,
       null,
       null,
@@ -784,7 +844,7 @@
       8500.0,
       null
     ],
-    "APPROX": [
+    "APPROX 10000 BAGS": [
       null,
       null,
       null,
@@ -795,7 +855,7 @@
       null,
       null
     ],
-    "BAGS": [
+    "BAGS SALES APPROX 20000 BAGS": [
       null,
       null,
       null,
@@ -804,6 +864,72 @@
       null,
       null,
       null,
+      null
+    ],
+    "BAGS SALES APPROX 8000 BAGS": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "BYADGI (KDL) BEST": [
+      null,
+      null,
+      null,
+      null,
+      21000.0,
+      null,
+      null,
+      22500.0,
+      33000.0
+    ],
+    "BYADGI (KDL) DLX": [
+      null,
+      null,
+      null,
+      41000.0,
+      38500.0,
+      null,
+      32500.0,
+      42500.0,
+      40500.0
+    ],
+    "BYADGI (KDL) FATKI": [
+      null,
+      null,
+      null,
+      7000.0,
+      7000.0,
+      null,
+      null,
+      6500.0,
+      6500.0
+    ],
+    "BYADGI (KDL) MEDIUM": [
+      null,
+      null,
+      null,
+      13500.0,
+      17000.0,
+      14000.0,
+      null,
+      14000.0,
+      14000.0
+    ],
+    "BYADGI (KDL) MEDIUM BEST": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      17500.0,
       null
     ],
     "BYADGI FATKI": [
@@ -828,39 +954,6 @@
       null,
       null
     ],
-    "DABBI BEST": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      25000.0,
-      43000.0
-    ],
-    "DABBI DLX": [
-      null,
-      null,
-      null,
-      41000.0,
-      34000.0,
-      null,
-      42000.0,
-      61750.0,
-      52750.0
-    ],
-    "DABBI MEDIUM BEST": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
     "DABE": [
       null,
       null,
@@ -872,7 +965,7 @@
       17000.0,
       null
     ],
-    "DABEI": [
+    "DABEI 18000": [
       null,
       null,
       null,
@@ -883,7 +976,7 @@
       null,
       null
     ],
-    "DD": [
+    "DEVANUR DELUXE (DD)": [
       null,
       null,
       null,
@@ -894,7 +987,18 @@
       null,
       17000.0
     ],
-    "DL": [
+    "DL BEST 24000 TO 29000": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      26500.0,
+      null,
+      null
+    ],
+    "DL FATKI 5500 TO 7500": [
       null,
       null,
       null,
@@ -905,7 +1009,18 @@
       null,
       null
     ],
-    "DLX": [
+    "DL MEDIUM 10000 TO 14000 TO 17000": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      14000.0,
+      null,
+      null
+    ],
+    "DLX 21000": [
       null,
       null,
       null,
@@ -916,49 +1031,27 @@
       null,
       null
     ],
-    "KDL": [
-      null,
-      38000.0,
-      null,
-      7000.0,
-      7000.0,
-      null,
-      null,
-      6500.0,
-      6500.0
-    ],
-    "KDL BEST": [
-      null,
-      null,
-      null,
-      null,
-      21000.0,
-      null,
-      null,
-      22500.0,
-      33000.0
-    ],
-    "KDL DLX": [
+    "KASHMIRI (DABBI)": [
       null,
       null,
       null,
       41000.0,
-      38500.0,
+      34000.0,
       null,
-      32500.0,
-      42500.0,
-      40500.0
+      42000.0,
+      25000.0,
+      43000.0
     ],
-    "KDL MEDIUM BEST": [
+    "KDL 35000": [
+      null,
+      38000.0,
+      null,
+      36750.0,
       null,
       null,
       null,
-      13500.0,
-      17000.0,
-      14000.0,
       null,
-      17500.0,
-      14000.0
+      null
     ],
     "LOCAL KDL": [
       null,
@@ -971,7 +1064,7 @@
       43000.0,
       45000.0
     ],
-    "NAYA": [
+    "NAYA MAAL ME 1000": [
       null,
       null,
       null,
@@ -982,7 +1075,7 @@
       null,
       null
     ],
-    "SEED FATKI": [
+    "SEED QTY": [
       null,
       null,
       null,
@@ -990,20 +1083,42 @@
       8500.0,
       null,
       null,
-      null,
-      null
-    ],
-    "SEED QTY": [
-      null,
-      null,
-      null,
-      null,
-      14750.0,
-      null,
-      null,
       13000.0,
       null
+    ],
+    "SYNGENTA 102": [
+      null,
+      27000.0,
+      102.0,
+      24000.0,
+      24000.0,
+      102.0,
+      null,
+      24000.0,
+      24000.0
+    ],
+    "SYNGENTA 2043": [
+      null,
+      null,
+      null,
+      null,
+      17000.0,
+      2043.0,
+      null,
+      14000.0,
+      17000.0
+    ],
+    "SYNGENTA 5531": [
+      null,
+      null,
+      5531.0,
+      8500.0,
+      5531.0,
+      5531.0,
+      null,
+      8000.0,
+      8000.0
     ]
   },
-  "last_updated": "2025-12-12T14:53:23.828874Z"
+  "last_updated": "2025-12-12T15:20:41.672070Z"
 }
