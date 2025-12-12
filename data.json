@@ -11,82 +11,36 @@
     "2025-12-11"
   ],
   "varieties": [
-    "531 fatki 8000 To 11500",
     "Byadgi (KDL)",
-    "DL BEST 24000 To 29000",
-    "DL fatki 5500 To 7500",
-    "DL medium 10000 To 14000 To 17000",
-    "DLX 21000-24000",
+    "DL Best",
     "Devanur Deluxe (DD)",
+    "Fatki",
     "Kashmiri (Dabbi)",
     "Seed",
+    "Syngenta 102",
     "Syngenta 2043",
     "Syngenta 5531"
   ],
   "ac_prices": {
-    "531 fatki 8000 To 11500": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      8000.0,
-      null,
-      null
-    ],
     "Byadgi (KDL)": [
-      16625.0,
-      21125.0,
+      26500.0,
+      34750.0,
       null,
-      14824.0,
-      12199.0,
+      23898.0,
+      18703.0,
       14000.0,
       24687.0,
-      19679.0,
+      19375.0,
       20804.0
     ],
-    "DL BEST 24000 To 29000": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      26500.0,
-      null,
-      null
-    ],
-    "DL fatki 5500 To 7500": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      6500.0,
-      null,
-      null
-    ],
-    "DL medium 10000 To 14000 To 17000": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      14000.0,
-      null,
-      null
-    ],
-    "DLX 21000-24000": [
+    "DL Best": [
       22500.0,
       null,
       null,
       null,
       null,
       null,
-      null,
+      26500.0,
       null,
       null
     ],
@@ -101,6 +55,17 @@
       null,
       17000.0
     ],
+    "Fatki": [
+      6750.0,
+      7500.0,
+      null,
+      5750.0,
+      5750.0,
+      null,
+      7250.0,
+      null,
+      null
+    ],
     "Kashmiri (Dabbi)": [
       29625.0,
       39000.0,
@@ -113,15 +78,26 @@
       28968.0
     ],
     "Seed": [
-      8500.0,
-      8500.0,
+      11500.0,
+      11625.0,
       null,
-      8500.0,
-      8500.0,
+      11625.0,
+      11625.0,
       null,
-      null,
-      null,
+      13000.0,
+      13000.0,
       null
+    ],
+    "Syngenta 102": [
+      null,
+      27000.0,
+      102.0,
+      24000.0,
+      24000.0,
+      102.0,
+      null,
+      24000.0,
+      24000.0
     ],
     "Syngenta 2043": [
       10021.0,
@@ -139,7 +115,7 @@
       13000.0,
       9265.0,
       10750.0,
-      5531.0,
+      9265.0,
       5531.0,
       12000.0,
       8000.0,
@@ -147,17 +123,6 @@
     ]
   },
   "new_prices": {
-    "531 fatki 8000 To 11500": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
     "Byadgi (KDL)": [
       null,
       null,
@@ -169,40 +134,7 @@
       null,
       null
     ],
-    "DL BEST 24000 To 29000": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "DL fatki 5500 To 7500": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "DL medium 10000 To 14000 To 17000": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "DLX 21000-24000": [
+    "DL Best": [
       null,
       null,
       null,
@@ -214,6 +146,17 @@
       null
     ],
     "Devanur Deluxe (DD)": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "Fatki": [
       null,
       null,
       null,
@@ -236,6 +179,17 @@
       null
     ],
     "Seed": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "Syngenta 102": [
       null,
       null,
       null,
@@ -269,5 +223,5 @@
       null
     ]
   },
-  "last_updated": "2025-12-12T17:47:19.925619Z"
+  "last_updated": "2025-12-12T17:59:01.089558Z"
 }
