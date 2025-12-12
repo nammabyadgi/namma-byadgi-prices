@@ -12,37 +12,77 @@
   ],
   "varieties": [
     "Byadgi (KDL)",
-    "DL Best",
+    "Byadgi (KDL) | BEST",
+    "Byadgi (KDL) | DLX",
+    "Byadgi (KDL) | FATKI",
+    "Byadgi (KDL) | Medium",
     "Devanur Deluxe (DD)",
-    "Fatki",
     "Kashmiri (Dabbi)",
-    "Seed",
+    "Kashmiri (Dabbi) | BEST",
+    "Kashmiri (Dabbi) | DLX",
+    "Seed Quality",
+    "Seed Quality | FATKI",
     "Syngenta 102",
     "Syngenta 2043",
-    "Syngenta 5531"
+    "Syngenta 2043 | DLX",
+    "Syngenta 5531",
+    "Syngenta 5531 | FATKI"
   ],
   "ac_prices": {
     "Byadgi (KDL)": [
-      26500.0,
-      34750.0,
       null,
-      23898.0,
-      18703.0,
-      14000.0,
-      24687.0,
-      19375.0,
-      20804.0
+      38000.0,
+      36750.0,
+      36750.0,
+      null,
+      40250.0,
+      40000.0,
+      46000.0,
+      45000.0
     ],
-    "DL Best": [
-      22500.0,
+    "Byadgi (KDL) | BEST": [
+      25000.0,
+      31000.0,
+      23000.0,
+      21000.0,
+      8350.0,
+      22250.0,
+      22000.0,
+      8500.0,
+      25000.0
+    ],
+    "Byadgi (KDL) | DLX": [
+      28000.0,
+      35000.0,
+      34000.0,
+      35000.0,
+      700.0,
+      29000.0,
+      27500.0,
+      null,
+      40500.0
+    ],
+    "Byadgi (KDL) | FATKI": [
+      6750.0,
+      7500.0,
+      6750.0,
+      5750.0,
       null,
       null,
       null,
-      null,
-      null,
-      26500.0,
       null,
       null
+    ],
+    "Byadgi (KDL) | Medium": [
+      null,
+      null,
+      12500.0,
+      13500.0,
+      14000.0,
+      14000.0,
+      14000.0,
+      14000.0,
+      14000.0
     ],
     "Devanur Deluxe (DD)": [
       null,
@@ -55,70 +95,114 @@
       null,
       17000.0
     ],
-    "Fatki": [
-      6750.0,
-      7500.0,
+    "Kashmiri (Dabbi)": [
+      26500.0,
+      32000.0,
+      29750.0,
+      30750.0,
       null,
-      5750.0,
-      5750.0,
+      28500.0,
+      29500.0,
+      4075.0,
+      17000.0
+    ],
+    "Kashmiri (Dabbi) | BEST": [
       null,
-      7250.0,
       null,
+      null,
+      null,
+      17000.0,
+      null,
+      null,
+      34000.0,
+      34250.0
+    ],
+    "Kashmiri (Dabbi) | DLX": [
+      32750.0,
+      46000.0,
+      35500.0,
+      45385.0,
+      38050.0,
+      31500.0,
+      30500.0,
+      null,
+      52750.0
+    ],
+    "Seed Quality": [
+      14500.0,
+      14750.0,
+      14750.0,
+      11625.0,
+      null,
+      14000.0,
+      13000.0,
+      9300.0,
       null
     ],
-    "Kashmiri (Dabbi)": [
-      29625.0,
-      39000.0,
-      18000.0,
-      34346.0,
-      48050.0,
+    "Seed Quality | FATKI": [
+      8500.0,
+      8500.0,
+      8500.0,
       null,
-      30000.0,
-      38687.0,
-      28968.0
-    ],
-    "Seed": [
-      11500.0,
-      11625.0,
+      17000.0,
+      8000.0,
       null,
-      11625.0,
-      11625.0,
       null,
-      13000.0,
-      13000.0,
       null
     ],
     "Syngenta 102": [
       null,
       27000.0,
-      102.0,
       24000.0,
       24000.0,
       102.0,
-      null,
+      24000.0,
+      24000.0,
       24000.0,
       24000.0
     ],
     "Syngenta 2043": [
-      10021.0,
+      10022.0,
       23500.0,
       17500.0,
-      17500.0,
+      19000.0,
       17000.0,
-      9521.0,
+      15500.0,
+      15500.0,
       15000.0,
-      11010.0,
-      18250.0
+      15500.0
+    ],
+    "Syngenta 2043 | DLX": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      20000.0,
+      null,
+      null,
+      21000.0
     ],
     "Syngenta 5531": [
       14000.0,
+      null,
       13000.0,
-      9265.0,
-      10750.0,
-      9265.0,
-      5531.0,
+      null,
+      null,
       12000.0,
+      12000.0,
+      null,
+      null
+    ],
+    "Syngenta 5531 | FATKI": [
+      null,
+      null,
+      8500.0,
+      8500.0,
+      5531.0,
+      null,
       8000.0,
+      null,
       8000.0
     ]
   },
@@ -134,7 +218,40 @@
       null,
       null
     ],
-    "DL Best": [
+    "Byadgi (KDL) | BEST": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "Byadgi (KDL) | DLX": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "Byadgi (KDL) | FATKI": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "Byadgi (KDL) | Medium": [
       null,
       null,
       null,
@@ -156,17 +273,6 @@
       null,
       null
     ],
-    "Fatki": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
     "Kashmiri (Dabbi)": [
       null,
       null,
@@ -178,7 +284,40 @@
       null,
       null
     ],
-    "Seed": [
+    "Kashmiri (Dabbi) | BEST": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "Kashmiri (Dabbi) | DLX": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "Seed Quality": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "Seed Quality | FATKI": [
       null,
       null,
       null,
@@ -211,7 +350,29 @@
       null,
       null
     ],
+    "Syngenta 2043 | DLX": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
     "Syngenta 5531": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "Syngenta 5531 | FATKI": [
       null,
       null,
       null,
@@ -223,5 +384,5 @@
       null
     ]
   },
-  "last_updated": "2025-12-12T17:59:01.089558Z"
+  "last_updated": "2025-12-12T18:10:36.055669Z"
 }
