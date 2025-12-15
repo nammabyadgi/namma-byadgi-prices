@@ -58,16 +58,26 @@ CANONICAL_VARIETIES = [
 ]
 # Patterns (ordered - most specific first). Use robust word boundaries and OCR-friendly alternatives.
 VARIETY_PATTERNS = [
+    # Syngenta
     (r'\b2043\b', 'Syngenta 2043'),
     (r'\b5531\b', 'Syngenta 5531'),
     (r'\b102\b', 'Syngenta 102'),
+
+    # Local KDL FIRST (must win before generic KDL)
+    (r'\blocal\s*kdl\b', 'Local KDL'),
+
+    # Byadgi KDL (explicit)
+    (r'\bbyadgi\s*kdl\b|\bbyadgi\b', 'Byadgi (KDL)'),
+
+    # Kashmiri Dabbi (handled later for grades)
     (r'\bdabbi\b|\bkashmiri\b', 'Kashmiri (Dabbi)'),
+
+    # Others
     (r'\bdevanur\b|\bdd\b', 'Devanur Deluxe (DD)'),
     (r'\bguntur\b|\bs-10\b|\bs10\b', 'Guntur S-10'),
-    (r'\bbyadgi\b|\bkdl\b(?!\s*fatki)|\bbyadgi\b', 'Byadgi (KDL)'),
-    (r'\blocal\s*kdl\b|\blocal\b\s*kdl', 'Local KDL'),
-    (r'\bseed\b|\bseed quality\b', 'Seed Quality'),
+    (r'\bseed\s*quality\b|\bseed\b', 'Seed Quality'),
 ]
+
 # ---- END VARIETY_PATTERNS ----
 
 # Lines to ignore (noise patterns)
@@ -256,24 +266,24 @@ def parse_image(path):
                 label = m_label.group(0).strip()
 
             nums = extract_numbers(line)
-            if not nums:
-                # look ahead 1 or 2 lines
-                look = []
-                if i + 1 < len(lines):
-                    look.append(lines[i + 1])
-                if i + 2 < len(lines):
-                    look.append(lines[i + 2])
-                for ln in look:
-                    if should_ignore(ln):
-                        continue
-                    # check if ln contains numbers and optional label
-                    if not label:
-                        m_label = re.search(r'\b(dlx|delux|deluxe|dlx|best|medium best|medium|fatki)\b', ln, re.IGNORECASE)
-                        if m_label:
-                            label = m_label.group(0).strip()
-                    nums = extract_numbers(ln)
-                    if nums:
-                        break
+            # if not nums:
+            #     # look ahead 1 or 2 lines
+            #     look = []
+            #     if i + 1 < len(lines):
+            #         look.append(lines[i + 1])
+            #     if i + 2 < len(lines):
+            #         look.append(lines[i + 2])
+            #     for ln in look:
+            #         if should_ignore(ln):
+            #             continue
+            #         # check if ln contains numbers and optional label
+            #         if not label:
+            #             m_label = re.search(r'\b(dlx|delux|deluxe|dlx|best|medium best|medium|fatki)\b', ln, re.IGNORECASE)
+            #             if m_label:
+            #                 label = m_label.group(0).strip()
+            #         nums = extract_numbers(ln)
+            #         if nums:
+            #             break
 
             if not nums:
                 # As a fallback, search the whole OCR text for numbers near first occurrence of variety
@@ -287,10 +297,34 @@ def parse_image(path):
 
             if nums:
                 # if range present - we already added both endpoints; pick median
-                price = pick_mid(nums)
+                # price = pick_mid(nums)
+                # price = nums[0] if nums else None
+
+                if variety in ('Byadgi (KDL)', 'Kashmiri (Dabbi)') and len(nums) >= 3:
+                    # nums = sorted(nums, reverse=True)
+                    nums = sorted(nums, reverse=True)[:2]
+                
+                price = nums[0] if nums else None
+
+                if variety.startswith('Syngenta') and len(nums) >= 3:
+                    grade_map = [
+                        ('DLX', nums[0]),
+                        ('BEST', nums[1]),
+                        ('Medium BEST', nums[2]),
+                    ]
+                    for g, p in grade_map:
+                        prices[f"{variety} | {g}"] = p
+                    continue
+
                 # canonicalize variety to the whitelist (ensures only allowed varieties)
                 if variety in CANONICAL_VARIETIES:
                     # craft final key including label if present (optional)
+                    # 🚫 Disallow grade-less Dabbi
+                    if variety == 'Kashmiri (Dabbi)' and not label:
+                        continue
+
+
+                    
                     key = variety
                     if label:
                         # normalize label names
@@ -310,8 +344,19 @@ def parse_image(path):
                         # attach label (you can choose to store separately instead)
                         key = f"{variety} | {lab}"
                     # if variety already exists average the values
-                    if key in prices:
-                        prices[key] = int(round((prices[key] + price) / 2))
+                    # if key in prices:
+                    #     # prices[key] = int(round((prices[key] + price) / 2))
+                    #     if key in prices:
+                    #         if key in prices:
+                    #             prices[key] = int(round((prices[key] + price) / 2))
+                    #         else:
+                    #             prices[key] = price
+                    #     else:
+                    #         prices[key] = price
+                        prices[key] = price
+
+
+
                     else:
                         prices[key] = price
     logging.info("Extracted %d items from %s", len(prices), os.path.basename(path))
@@ -370,30 +415,25 @@ def process_folder(input_folder):
 #     return df
 
 def fill_missing_weeks(df):
-    """
-    Ensure weekly continuity.
-    Tracks which values are interpolated.
-    """
     full_index = pd.date_range(
         start=df.index.min(),
         end=df.index.max(),
         freq='W-MON'
     )
 
-    original_mask = df.notna()  # TRUE = actual data
     df = df.reindex(full_index)
 
-    df_interpolated = df.interpolate(
+    actual_mask = df.notna()
+
+    df_filled = df.interpolate(
         method='linear',
         limit_direction='both'
-    )
+    ).ffill().bfill()
 
-    # Anything that was NaN but now filled = interpolated
-    interp_mask = (~original_mask) & df_interpolated.notna()
+    interp_mask = df_filled.notna() & (~actual_mask)
 
-    df_final = df_interpolated.ffill().bfill()
+    return df_filled, interp_mask
 
-    return df_final, interp_mask
 
 
 
@@ -767,8 +807,17 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                     return;
                 }
                 
-                document.getElementById('lastUpdated').textContent = 
-                    new Date(globalData.last_updated).toLocaleString();
+                document.getElementById('lastUpdated').textContent =
+                new Date(globalData.last_updated).toLocaleString('en-IN', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false
+                });
+
                 
                 populateVarietySelect();
                 updateChart();

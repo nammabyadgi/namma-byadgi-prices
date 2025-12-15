@@ -8,306 +8,235 @@
     "15 Dec 2025"
   ],
   "varieties": [
-    "Byadgi (KDL)",
-    "Byadgi (KDL) | BEST",
-    "Byadgi (KDL) | DLX",
     "Byadgi (KDL) | FATKI",
-    "Byadgi (KDL) | Medium",
     "Devanur Deluxe (DD)",
-    "Kashmiri (Dabbi)",
     "Kashmiri (Dabbi) | BEST",
     "Kashmiri (Dabbi) | DLX",
+    "Local KDL",
     "Seed Quality",
     "Seed Quality | FATKI",
     "Syngenta 102",
+    "Syngenta 102 | BEST",
+    "Syngenta 102 | DLX",
+    "Syngenta 102 | Medium BEST",
     "Syngenta 2043",
+    "Syngenta 2043 | BEST",
     "Syngenta 2043 | DLX",
-    "Syngenta 5531",
-    "Syngenta 5531 | FATKI"
+    "Syngenta 2043 | Medium BEST",
+    "Syngenta 5531 | BEST",
+    "Syngenta 5531 | DLX",
+    "Syngenta 5531 | FATKI",
+    "Syngenta 5531 | Medium BEST"
   ],
   "ac_prices": {
-    "Byadgi (KDL)": [
-      36750.0,
-      36750.0,
-      36750.0,
-      40250.0,
-      46000.0,
-      42500.0
-    ],
-    "Byadgi (KDL) | BEST": [
-      21000.0,
-      21000.0,
-      21000.0,
-      22250.0,
-      8500.0,
-      24750.0
-    ],
-    "Byadgi (KDL) | DLX": [
-      35000.0,
-      35000.0,
-      35000.0,
-      29000.0,
-      34000.0,
-      39000.0
-    ],
     "Byadgi (KDL) | FATKI": [
-      5750.0,
-      5750.0,
-      5750.0,
-      5750.0,
-      5750.0,
-      5750.0
-    ],
-    "Byadgi (KDL) | Medium": [
-      13500.0,
-      13500.0,
-      13500.0,
-      14000.0,
-      14000.0,
-      14000.0
+      6500.0,
+      6500.0,
+      6500.0,
+      6500.0,
+      6500.0,
+      6500.0
     ],
     "Devanur Deluxe (DD)": [
-      16750.0,
-      16750.0,
-      16750.0,
-      16750.0,
-      16750.0,
-      16750.0
-    ],
-    "Kashmiri (Dabbi)": [
-      30750.0,
-      30750.0,
-      30750.0,
-      28500.0,
-      4075.0,
-      17000.0
-    ],
-    "Kashmiri (Dabbi) | BEST": [
-      34000.0,
-      34000.0,
-      34000.0,
-      34000.0,
-      34000.0,
-      34000.0
-    ],
-    "Kashmiri (Dabbi) | DLX": [
-      45385.0,
-      45385.0,
-      45385.0,
-      31500.0,
-      37875.0,
-      44250.0
-    ],
-    "Seed Quality": [
-      11625.0,
-      11625.0,
-      11625.0,
-      14000.0,
-      9300.0,
-      9300.0
-    ],
-    "Seed Quality | FATKI": [
-      8000.0,
-      8000.0,
-      8000.0,
-      8000.0,
-      8000.0,
-      8000.0
-    ],
-    "Syngenta 102": [
-      24000.0,
-      24000.0,
-      24000.0,
-      24000.0,
-      24000.0,
-      23000.0
-    ],
-    "Syngenta 2043": [
-      19000.0,
-      19000.0,
-      19000.0,
       15500.0,
-      15000.0,
+      15500.0,
+      15500.0,
+      15500.0,
+      15500.0,
       15500.0
     ],
+    "Kashmiri (Dabbi) | BEST": [
+      22000.0,
+      22000.0,
+      22000.0,
+      22000.0,
+      22000.0,
+      22000.0
+    ],
+    "Kashmiri (Dabbi) | DLX": [
+      35000.0,
+      35000.0,
+      35000.0,
+      33000.0,
+      34500.0,
+      36000.0
+    ],
+    "Local KDL": [
+      38000.0,
+      38000.0,
+      38000.0,
+      38000.0,
+      46000.0,
+      40000.0
+    ],
+    "Seed Quality": [
+      8000.0,
+      8000.0,
+      8000.0,
+      13000.0,
+      17000.0,
+      17000.0
+    ],
+    "Seed Quality | FATKI": [
+      7000.0,
+      7000.0,
+      7000.0,
+      7000.0,
+      7000.0,
+      7000.0
+    ],
+    "Syngenta 102": [
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN
+    ],
+    "Syngenta 102 | BEST": [
+      28000.0,
+      28000.0,
+      28000.0,
+      28000.0,
+      24000.0,
+      26000.0
+    ],
+    "Syngenta 102 | DLX": [
+      24000.0,
+      24000.0,
+      24000.0,
+      24000.0,
+      102.0,
+      23000.0
+    ],
+    "Syngenta 102 | Medium BEST": [
+      102.0,
+      102.0,
+      102.0,
+      102.0,
+      28000.0,
+      102.0
+    ],
+    "Syngenta 2043": [
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN
+    ],
+    "Syngenta 2043 | BEST": [
+      25000.0,
+      25000.0,
+      25000.0,
+      19000.0,
+      17000.0,
+      24500.0
+    ],
     "Syngenta 2043 | DLX": [
-      20000.0,
-      20000.0,
-      20000.0,
-      20000.0,
-      20500.0,
+      19000.0,
+      19000.0,
+      19000.0,
+      15000.0,
+      14000.0,
       21000.0
     ],
-    "Syngenta 5531": [
+    "Syngenta 2043 | Medium BEST": [
+      2043.0,
+      2043.0,
+      2043.0,
+      2043.0,
+      2043.0,
+      2043.0
+    ],
+    "Syngenta 5531 | BEST": [
+      11500.0,
+      11500.0,
+      11500.0,
+      14500.0,
+      12750.0,
+      11000.0
+    ],
+    "Syngenta 5531 | DLX": [
+      8500.0,
+      8500.0,
+      8500.0,
       12000.0,
-      12000.0,
-      12000.0,
-      12000.0,
-      12000.0,
-      12000.0
+      9750.0,
+      7500.0
     ],
     "Syngenta 5531 | FATKI": [
-      8500.0,
-      8500.0,
-      8500.0,
-      8166.666666666667,
-      7833.333333333333,
-      7500.0
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN
+    ],
+    "Syngenta 5531 | Medium BEST": [
+      5531.0,
+      5531.0,
+      5531.0,
+      5531.0,
+      5531.0,
+      5531.0
     ]
   },
   "interpolated": {
-    "Byadgi (KDL)": [
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false
-    ],
-    "Byadgi (KDL) | BEST": [
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false
-    ],
-    "Byadgi (KDL) | DLX": [
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      true,
-      false,
-      false
-    ],
     "Byadgi (KDL) | FATKI": [
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
+      true,
       true,
       false,
       true,
-      false,
+      true,
       true
     ],
-    "Byadgi (KDL) | Medium": [
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false
-    ],
     "Devanur Deluxe (DD)": [
-      false,
-      false,
-      false,
-      false,
-      false,
       true,
-      false,
       true,
-      false,
       true,
-      false,
-      false
-    ],
-    "Kashmiri (Dabbi)": [
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
+      true,
+      true,
       false
     ],
     "Kashmiri (Dabbi) | BEST": [
-      false,
-      false,
-      false,
-      false,
-      false,
       true,
-      false,
       true,
-      false,
-      false,
+      true,
+      true,
       false,
       true
     ],
     "Kashmiri (Dabbi) | DLX": [
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
+      true,
+      true,
       false,
       false,
       true,
+      false
+    ],
+    "Local KDL": [
+      true,
+      true,
+      true,
+      false,
       false,
       false
     ],
     "Seed Quality": [
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
-      false,
+      true,
+      true,
       false,
       false,
       false,
       true
     ],
     "Seed Quality | FATKI": [
-      false,
-      false,
-      false,
-      false,
-      false,
+      true,
+      true,
       true,
       false,
-      false,
-      false,
       true,
-      false,
       true
     ],
     "Syngenta 102": [
@@ -316,9 +245,27 @@
       false,
       false,
       false,
+      false
+    ],
+    "Syngenta 102 | BEST": [
+      true,
+      true,
       false,
       false,
       false,
+      false
+    ],
+    "Syngenta 102 | DLX": [
+      true,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "Syngenta 102 | Medium BEST": [
+      true,
+      true,
       false,
       false,
       false,
@@ -330,41 +277,47 @@
       false,
       false,
       false,
-      false,
-      false,
-      false,
+      false
+    ],
+    "Syngenta 2043 | BEST": [
+      true,
+      true,
       false,
       false,
       false,
       false
     ],
     "Syngenta 2043 | DLX": [
-      false,
-      false,
-      false,
-      false,
-      false,
+      true,
       true,
       false,
       false,
-      false,
-      true,
       false,
       false
     ],
-    "Syngenta 5531": [
-      false,
-      false,
-      false,
-      false,
-      false,
+    "Syngenta 2043 | Medium BEST": [
+      true,
       true,
       false,
       false,
       false,
+      false
+    ],
+    "Syngenta 5531 | BEST": [
+      true,
       true,
       false,
-      true
+      false,
+      true,
+      false
+    ],
+    "Syngenta 5531 | DLX": [
+      true,
+      true,
+      false,
+      false,
+      true,
+      false
     ],
     "Syngenta 5531 | FATKI": [
       false,
@@ -372,53 +325,23 @@
       false,
       false,
       false,
+      false
+    ],
+    "Syngenta 5531 | Medium BEST": [
+      true,
+      true,
       false,
       false,
       true,
-      false,
-      true,
-      false,
       false
     ]
   },
   "wow_change": {
-    "Byadgi (KDL)": [
-      null,
-      0.0,
-      0.0,
-      9.52,
-      14.29,
-      -7.61
-    ],
-    "Byadgi (KDL) | BEST": [
-      null,
-      0.0,
-      0.0,
-      5.95,
-      -61.8,
-      191.18
-    ],
-    "Byadgi (KDL) | DLX": [
-      null,
-      0.0,
-      0.0,
-      -17.14,
-      17.24,
-      14.71
-    ],
     "Byadgi (KDL) | FATKI": [
       null,
       0.0,
       0.0,
       0.0,
-      0.0,
-      0.0
-    ],
-    "Byadgi (KDL) | Medium": [
-      null,
-      0.0,
-      0.0,
-      3.7,
       0.0,
       0.0
     ],
@@ -429,14 +352,6 @@
       0.0,
       0.0,
       0.0
-    ],
-    "Kashmiri (Dabbi)": [
-      null,
-      0.0,
-      0.0,
-      -7.32,
-      -85.7,
-      317.18
     ],
     "Kashmiri (Dabbi) | BEST": [
       null,
@@ -450,16 +365,24 @@
       null,
       0.0,
       0.0,
-      -30.59,
-      20.24,
-      16.83
+      -5.71,
+      4.55,
+      4.35
+    ],
+    "Local KDL": [
+      null,
+      0.0,
+      0.0,
+      0.0,
+      21.05,
+      -13.04
     ],
     "Seed Quality": [
       null,
       0.0,
       0.0,
-      20.43,
-      -33.57,
+      62.5,
+      30.77,
       0.0
     ],
     "Seed Quality | FATKI": [
@@ -472,29 +395,61 @@
     ],
     "Syngenta 102": [
       null,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      -4.17
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN
     ],
-    "Syngenta 2043": [
+    "Syngenta 102 | BEST": [
       null,
       0.0,
       0.0,
-      -18.42,
-      -3.23,
-      3.33
+      0.0,
+      -14.29,
+      8.33
+    ],
+    "Syngenta 102 | DLX": [
+      null,
+      0.0,
+      0.0,
+      0.0,
+      -99.58,
+      22449.02
+    ],
+    "Syngenta 102 | Medium BEST": [
+      null,
+      0.0,
+      0.0,
+      0.0,
+      27350.98,
+      -99.64
+    ],
+    "Syngenta 2043": [
+      null,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN
+    ],
+    "Syngenta 2043 | BEST": [
+      null,
+      0.0,
+      0.0,
+      -24.0,
+      -10.53,
+      44.12
     ],
     "Syngenta 2043 | DLX": [
       null,
       0.0,
       0.0,
-      0.0,
-      2.5,
-      2.44
+      -21.05,
+      -6.67,
+      50.0
     ],
-    "Syngenta 5531": [
+    "Syngenta 2043 | Medium BEST": [
       null,
       0.0,
       0.0,
@@ -502,14 +457,38 @@
       0.0,
       0.0
     ],
-    "Syngenta 5531 | FATKI": [
+    "Syngenta 5531 | BEST": [
       null,
       0.0,
       0.0,
-      -3.92,
-      -4.08,
-      -4.26
+      26.09,
+      -12.07,
+      -13.73
+    ],
+    "Syngenta 5531 | DLX": [
+      null,
+      0.0,
+      0.0,
+      41.18,
+      -18.75,
+      -23.08
+    ],
+    "Syngenta 5531 | FATKI": [
+      null,
+      NaN,
+      NaN,
+      NaN,
+      NaN,
+      NaN
+    ],
+    "Syngenta 5531 | Medium BEST": [
+      null,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
     ]
   },
-  "last_updated": "2025-12-15T11:25:00.388114Z"
+  "last_updated": "2025-12-15T17:37:06.884510Z"
 }
