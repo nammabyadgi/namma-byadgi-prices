@@ -667,3 +667,84 @@
 2025-12-15 16:55:00,454 INFO: HTML generated
 2025-12-15 16:55:00,455 INFO: SUCCESS! Generated 16 varieties
 2025-12-15 16:55:00,455 INFO: Upload data.json and index.html to GitHub!
+2025-12-15 22:56:01,580 INFO: Starting dashboard generation...
+2025-12-15 22:56:01,580 INFO: Processing: Screenshot 2025-11-27 185019.png
+2025-12-15 22:56:02,614 INFO: Extracted 9 items from Screenshot 2025-11-27 185019.png
+2025-12-15 22:56:02,614 INFO: Processing: Screenshot 2025-12-08 174552.png
+2025-12-15 22:56:03,270 INFO: Extracted 10 items from Screenshot 2025-12-08 174552.png
+2025-12-15 22:56:03,270 INFO: Processing: WhatsApp Image 2025-11-06 at 18.59.51 (2).jpeg
+2025-12-15 22:56:03,602 INFO: Extracted 12 items from WhatsApp Image 2025-11-06 at 18.59.51 (2).jpeg
+2025-12-15 22:56:03,602 INFO: Processing: WhatsApp Image 2025-11-13 at 20.56.06 (2).jpeg
+2025-12-15 22:56:03,951 INFO: Extracted 11 items from WhatsApp Image 2025-11-13 at 20.56.06 (2).jpeg
+2025-12-15 22:56:03,951 INFO: Processing: WhatsApp Image 2025-11-20 at 20.59.54.jpeg
+2025-12-15 22:56:04,307 INFO: Extracted 14 items from WhatsApp Image 2025-11-20 at 20.59.54.jpeg
+2025-12-15 22:56:04,311 INFO: Processing: WhatsApp Image 2025-11-24 at 18.05.40.jpeg
+2025-12-15 22:56:04,675 INFO: Extracted 13 items from WhatsApp Image 2025-11-24 at 18.05.40.jpeg
+2025-12-15 22:56:04,675 INFO: Processing: WhatsApp Image 2025-12-01 at 16.35.06.jpeg
+2025-12-15 22:56:05,037 INFO: Extracted 14 items from WhatsApp Image 2025-12-01 at 16.35.06.jpeg
+2025-12-15 22:56:05,037 INFO: Processing: WhatsApp Image 2025-12-04 at 19.13.14.jpeg
+2025-12-15 22:56:05,399 INFO: Extracted 13 items from WhatsApp Image 2025-12-04 at 19.13.14.jpeg
+2025-12-15 22:56:05,399 INFO: Processing: WhatsApp Image 2025-12-11 at 19.40.05.jpeg
+2025-12-15 22:56:05,773 INFO: Extracted 14 items from WhatsApp Image 2025-12-11 at 19.40.05.jpeg
+2025-12-15 22:56:05,773 INFO: Processing: WhatsApp Image 2025-12-15 at 16.46.02.jpeg
+2025-12-15 22:56:06,184 INFO: Extracted 13 items from WhatsApp Image 2025-12-15 at 16.46.02.jpeg
+2025-12-15 22:56:06,238 INFO: Detected 20 varieties, 6 dates
+2025-12-15 22:56:06,238 INFO: Varieties: Byadgi (KDL) | FATKI, Devanur Deluxe (DD), Kashmiri (Dabbi), Kashmiri (Dabbi) | BEST, Kashmiri (Dabbi) | DLX, Local KDL, Seed Quality, Seed Quality | FATKI, Syngenta 102, Syngenta 102 | BEST, Syngenta 102 | DLX, Syngenta 102 | Medium BEST, Syngenta 2043, Syngenta 2043 | BEST, Syngenta 2043 | DLX, Syngenta 2043 | Medium BEST, Syngenta 5531 | BEST, Syngenta 5531 | DLX, Syngenta 5531 | FATKI, Syngenta 5531 | Medium BEST
+2025-12-15 22:56:06,280 INFO: JSON saved: C:\Users\mrmay\Downloads\APMC Prices\web\data.json
+2025-12-15 22:56:06,436 INFO: HTML generated
+2025-12-15 22:56:06,436 INFO: SUCCESS! Generated 20 varieties
+2025-12-15 22:56:06,436 INFO: Upload data.json and index.html to GitHub!
+2025-12-15 23:07:02,276 INFO: Starting dashboard generation...
+2025-12-15 23:07:02,276 INFO: Processing: Screenshot 2025-11-27 185019.png
+2025-12-15 23:07:03,054 INFO: Extracted 8 items from Screenshot 2025-11-27 185019.png
+2025-12-15 23:07:03,054 INFO: Processing: Screenshot 2025-12-08 174552.png
+2025-12-15 23:07:03,772 INFO: Extracted 9 items from Screenshot 2025-12-08 174552.png
+2025-12-15 23:07:03,772 INFO: Processing: WhatsApp Image 2025-11-06 at 18.59.51 (2).jpeg
+2025-12-15 23:07:04,119 INFO: Extracted 11 items from WhatsApp Image 2025-11-06 at 18.59.51 (2).jpeg
+2025-12-15 23:07:04,119 INFO: Processing: WhatsApp Image 2025-11-13 at 20.56.06 (2).jpeg
+2025-12-15 23:07:04,495 INFO: Extracted 10 items from WhatsApp Image 2025-11-13 at 20.56.06 (2).jpeg
+2025-12-15 23:07:04,495 INFO: Processing: WhatsApp Image 2025-11-20 at 20.59.54.jpeg
+2025-12-15 23:07:04,841 INFO: Extracted 13 items from WhatsApp Image 2025-11-20 at 20.59.54.jpeg
+2025-12-15 23:07:04,841 INFO: Processing: WhatsApp Image 2025-11-24 at 18.05.40.jpeg
+2025-12-15 23:07:05,215 INFO: Extracted 12 items from WhatsApp Image 2025-11-24 at 18.05.40.jpeg
+2025-12-15 23:07:05,215 INFO: Processing: WhatsApp Image 2025-12-01 at 16.35.06.jpeg
+2025-12-15 23:07:05,588 INFO: Extracted 13 items from WhatsApp Image 2025-12-01 at 16.35.06.jpeg
+2025-12-15 23:07:05,589 INFO: Processing: WhatsApp Image 2025-12-04 at 19.13.14.jpeg
+2025-12-15 23:07:05,994 INFO: Extracted 12 items from WhatsApp Image 2025-12-04 at 19.13.14.jpeg
+2025-12-15 23:07:05,995 INFO: Processing: WhatsApp Image 2025-12-11 at 19.40.05.jpeg
+2025-12-15 23:07:06,432 INFO: Extracted 13 items from WhatsApp Image 2025-12-11 at 19.40.05.jpeg
+2025-12-15 23:07:06,433 INFO: Processing: WhatsApp Image 2025-12-15 at 16.46.02.jpeg
+2025-12-15 23:07:06,873 INFO: Extracted 12 items from WhatsApp Image 2025-12-15 at 16.46.02.jpeg
+2025-12-15 23:07:06,883 INFO: Detected 19 varieties, 6 dates
+2025-12-15 23:07:06,883 INFO: Varieties: Byadgi (KDL) | FATKI, Devanur Deluxe (DD), Kashmiri (Dabbi) | BEST, Kashmiri (Dabbi) | DLX, Local KDL, Seed Quality, Seed Quality | FATKI, Syngenta 102, Syngenta 102 | BEST, Syngenta 102 | DLX, Syngenta 102 | Medium BEST, Syngenta 2043, Syngenta 2043 | BEST, Syngenta 2043 | DLX, Syngenta 2043 | Medium BEST, Syngenta 5531 | BEST, Syngenta 5531 | DLX, Syngenta 5531 | FATKI, Syngenta 5531 | Medium BEST
+2025-12-15 23:07:06,894 INFO: JSON saved: C:\Users\mrmay\Downloads\APMC Prices\web\data.json
+2025-12-15 23:07:06,918 INFO: HTML generated
+2025-12-15 23:07:06,918 INFO: SUCCESS! Generated 19 varieties
+2025-12-15 23:07:06,918 INFO: Upload data.json and index.html to GitHub!
+2025-12-15 23:14:28,903 INFO: Starting dashboard generation...
+2025-12-15 23:14:28,903 INFO: Processing: Screenshot 2025-11-27 185019.png
+2025-12-15 23:14:29,633 INFO: Extracted 8 items from Screenshot 2025-11-27 185019.png
+2025-12-15 23:14:29,633 INFO: Processing: Screenshot 2025-12-08 174552.png
+2025-12-15 23:14:30,304 INFO: Extracted 9 items from Screenshot 2025-12-08 174552.png
+2025-12-15 23:14:30,306 INFO: Processing: WhatsApp Image 2025-11-06 at 18.59.51 (2).jpeg
+2025-12-15 23:14:30,629 INFO: Extracted 11 items from WhatsApp Image 2025-11-06 at 18.59.51 (2).jpeg
+2025-12-15 23:14:30,629 INFO: Processing: WhatsApp Image 2025-11-13 at 20.56.06 (2).jpeg
+2025-12-15 23:14:31,033 INFO: Extracted 10 items from WhatsApp Image 2025-11-13 at 20.56.06 (2).jpeg
+2025-12-15 23:14:31,033 INFO: Processing: WhatsApp Image 2025-11-20 at 20.59.54.jpeg
+2025-12-15 23:14:31,398 INFO: Extracted 13 items from WhatsApp Image 2025-11-20 at 20.59.54.jpeg
+2025-12-15 23:14:31,398 INFO: Processing: WhatsApp Image 2025-11-24 at 18.05.40.jpeg
+2025-12-15 23:14:31,783 INFO: Extracted 12 items from WhatsApp Image 2025-11-24 at 18.05.40.jpeg
+2025-12-15 23:14:31,783 INFO: Processing: WhatsApp Image 2025-12-01 at 16.35.06.jpeg
+2025-12-15 23:14:32,149 INFO: Extracted 13 items from WhatsApp Image 2025-12-01 at 16.35.06.jpeg
+2025-12-15 23:14:32,149 INFO: Processing: WhatsApp Image 2025-12-04 at 19.13.14.jpeg
+2025-12-15 23:14:32,526 INFO: Extracted 12 items from WhatsApp Image 2025-12-04 at 19.13.14.jpeg
+2025-12-15 23:14:32,527 INFO: Processing: WhatsApp Image 2025-12-11 at 19.40.05.jpeg
+2025-12-15 23:14:32,920 INFO: Extracted 13 items from WhatsApp Image 2025-12-11 at 19.40.05.jpeg
+2025-12-15 23:14:32,921 INFO: Processing: WhatsApp Image 2025-12-15 at 16.46.02.jpeg
+2025-12-15 23:14:33,431 INFO: Extracted 12 items from WhatsApp Image 2025-12-15 at 16.46.02.jpeg
+2025-12-15 23:14:33,431 INFO: Detected 19 varieties, 6 dates
+2025-12-15 23:14:33,431 INFO: Varieties: Byadgi (KDL) | FATKI, Devanur Deluxe (DD), Kashmiri (Dabbi) | BEST, Kashmiri (Dabbi) | DLX, Local KDL, Seed Quality, Seed Quality | FATKI, Syngenta 102, Syngenta 102 | BEST, Syngenta 102 | DLX, Syngenta 102 | Medium BEST, Syngenta 2043, Syngenta 2043 | BEST, Syngenta 2043 | DLX, Syngenta 2043 | Medium BEST, Syngenta 5531 | BEST, Syngenta 5531 | DLX, Syngenta 5531 | FATKI, Syngenta 5531 | Medium BEST
+2025-12-15 23:14:33,455 INFO: JSON saved: C:\Users\mrmay\Downloads\APMC Prices\web\data.json
+2025-12-15 23:14:33,485 INFO: HTML generated
+2025-12-15 23:14:33,485 INFO: SUCCESS! Generated 19 varieties
+2025-12-15 23:14:33,485 INFO: Upload data.json and index.html to GitHub!

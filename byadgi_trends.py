@@ -480,8 +480,18 @@ def generate_json_data(records, output_path):
         series = df[var] if var in df.columns else pd.Series([np.nan] * len(all_dates), index=all_dates)
         series = series.reindex(all_dates)
         # output["ac_prices"][var] = [float(v) if pd.notna(v) else None for v in series.values]
-        prices = series.values.tolist()
-        interp_flags = interp_mask[var].fillna(False).values.tolist()
+        # prices = series.values.tolist()
+        # interp_flags = interp_mask[var].fillna(False).values.tolist()
+        prices = [
+            float(v) if pd.notna(v) else None
+            for v in series.values
+        ]
+
+        interp_flags = [
+            bool(v) if pd.notna(v) else False
+            for v in interp_mask[var].values
+        ]
+
 
         # Week-on-week %
         wow = []
@@ -498,7 +508,9 @@ def generate_json_data(records, output_path):
         # output["new_prices"][var] = [None] * len(all_dates)
     
     with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+        # json.dump(output, f, indent=2, ensure_ascii=False)
+        json.dump(output, f, indent=2, ensure_ascii=False, allow_nan=False)
+
     
     logging.info("JSON saved: %s", output_path)
     return output
