@@ -224,7 +224,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>🌶️ Namma Byadgi - Chilli Price Dashboard</h1>
+            <h1>🌶️Namma Byadgi - Chilli Price Dashboard🌶️</h1>
             <p class="subtitle">Real-time APMC market prices</p>
             <p class="last-updated">Last Updated: <span id="lastUpdated">Loading...</span></p>
         </header>
@@ -331,32 +331,69 @@
             
             varieties.forEach((v, idx) => {
                 const prices = globalData.ac_prices[v] || [];
-                datasets.push({
-                    label: v,
-                    data: prices,
-                    borderColor: `hsl(${idx * 60}, 70%, 50%)`,
-                    backgroundColor: `hsla(${idx * 60}, 70%, 50%, 0.1)`,
-                    tension: 0.3,
-                    fill: false,
-                    borderWidth: 2,
-                    pointRadius: 4,
-                    pointHoverRadius: 6
-                });
+
+                
+            const interp = globalData.interpolated[v] || [];
+
+            datasets.push({
+                label: v,
+                data: prices,
+                borderColor: `hsl(${idx * 60}, 70%, 50%)`,
+                backgroundColor: `hsla(${idx * 60}, 70%, 50%, 0.1)`,
+                tension: 0.3,
+                fill: false,
+                borderWidth: 2,
+
+                pointRadius: (ctx) =>
+                    interp[ctx.dataIndex] ? 3 : 6,
+
+                pointBackgroundColor: (ctx) =>
+                    interp[ctx.dataIndex] ? '#ffffff' : `hsl(${idx * 60}, 70%, 50%)`,
+
+                pointBorderWidth: (ctx) =>
+                    interp[ctx.dataIndex] ? 2 : 0,
+
+                pointBorderColor: `hsl(${idx * 60}, 70%, 50%)`
+            });
+
+
             });
             
             const ctx = document.getElementById('trendChart').getContext('2d');
             if (trendChart) trendChart.destroy();
             
             trendChart = new Chart(ctx, {
-                type: chartType,
-                data: { labels, datasets },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    plugins: { legend: { display: true, position: 'top' } },
-                    scales: { y: { beginAtZero: false } }
+            type: chartType,
+            data: { labels, datasets },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (ctx) {
+                                const v = ctx.dataset.label;
+                                const idx = ctx.dataIndex;
+                                const price = ctx.parsed.y;
+                                const isInterp = globalData.interpolated[v]?.[idx];
+                                if (price === null) return `${v}: -`;
+                                    return `${v}: ₹${price}${isInterp ? ' (Interpolated)' : ''}`;
+                            }
+                        }
+                    }
+                },
+
+                scales: {
+                    y: { beginAtZero: false }
                 }
-            });
+            }
+        });
+
             
             updateLatestChart();
         }
@@ -408,15 +445,20 @@
             globalData.varieties.forEach(v => {
                 const lastPrice = globalData.ac_prices[v]?.[lastIdx];
                 const prevPrice = globalData.ac_prices[v]?.[prevIdx];
-                const change = lastPrice && prevPrice ? lastPrice - prevPrice : null;
+                // const change = lastPrice && prevPrice ? lastPrice - prevPrice : null;
+                const wow = globalData.wow_change[v]?.[lastIdx];
                 
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td><strong>${v}</strong></td>
                     <td>₹${lastPrice ? lastPrice.toLocaleString() : '-'}</td>
-                    <td style="color: ${change > 0 ? '#22c55e' : change < 0 ? '#ef4444' : '#999'}; font-weight: 600;">
-                        ${change ? (change > 0 ? '+' : '') + change : '-'}
+                    <td style="
+                        color: ${wow > 0 ? '#22c55e' : wow < 0 ? '#ef4444' : '#999'};
+                        font-weight: 600;
+                    ">
+                        ${wow !== null ? (wow > 0 ? '+' : '') + wow + '%' : '-'}
                     </td>
+
                 `;
                 tbody.appendChild(tr);
             });
@@ -447,7 +489,21 @@
                 { label: 'Top Price', value: topPrice.variety, subtext: '₹' + topPrice.price.toLocaleString() },
                 { label: 'Avg Price', value: '₹' + avgPrice.toLocaleString(), subtext: '' },
                 { label: 'Total Varieties', value: globalData.varieties.length, subtext: 'tracked' },
-                { label: 'Latest Date', value: globalData.dates[lastIdx], subtext: '' }
+                { label: 'Latest Date', value: globalData.dates[lastIdx], subtext: '' },
+                {
+                label: 'Avg WoW Change',
+                value: (() => {
+                    const vals = globalData.varieties
+                        .map(v => globalData.wow_change[v]?.[lastIdx])
+                        .filter(v => v !== null);
+                    if (vals.length === 0) return '0%';
+                    const avg = Math.round(vals.reduce((a,b)=>a+b,0) / vals.length);
+                    return avg + '%';
+                })(),
+                subtext: 'week-on-week'
+                }
+
+
             ];
             
             stats.forEach(stat => {
