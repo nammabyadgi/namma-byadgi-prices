@@ -342,7 +342,7 @@
                 const prices = globalData.ac_prices[v] || [];
 
                 
-            const interp = globalData.interpolated[v] || [];
+            // const interp = globalData.interpolated[v] || [];
 
             datasets.push({
                 label: v,
@@ -353,16 +353,11 @@
                 fill: false,
                 borderWidth: 2,
 
-                pointRadius: (ctx) =>
-                    interp[ctx.dataIndex] ? 3 : 6,
+            pointRadius: 5,
+            pointBackgroundColor: `hsl(${idx * 60}, 70%, 50%)`,
+            pointBorderWidth: 0,
+            pointBorderColor: `hsl(${idx * 60}, 70%, 50%)`
 
-                pointBackgroundColor: (ctx) =>
-                    interp[ctx.dataIndex] ? '#ffffff' : `hsl(${idx * 60}, 70%, 50%)`,
-
-                pointBorderWidth: (ctx) =>
-                    interp[ctx.dataIndex] ? 2 : 0,
-
-                pointBorderColor: `hsl(${idx * 60}, 70%, 50%)`
             });
 
 
@@ -389,7 +384,8 @@
                                 const v = ctx.dataset.label;
                                 const idx = ctx.dataIndex;
                                 const price = ctx.parsed.y;
-                                const isInterp = globalData.interpolated[v]?.[idx];
+                                // const isInterp = globalData.interpolated[v]?.[idx];
+                                const isInterp = false;
                                 if (price === null) return `${v}: -`;
                                     return `${v}: ₹${price}${isInterp ? ' (Interpolated)' : ''}`;
                             }
