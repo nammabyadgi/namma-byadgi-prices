@@ -12,8 +12,12 @@ OUTPUT_FOLDER = r"C:\Users\mrmay\Downloads\APMC Prices\web"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 # ================= HELPERS =================
-def is_date_cell(x):
-    return isinstance(x, str) and re.search(r"\d{2}-[A-Za-z]{3}", x)
+def row_has_date(row):
+    for cell in row:
+        if isinstance(cell, str) and re.search(r"\d{2}-[A-Za-z]{3}", cell):
+            return True
+    return False
+
 
 def clean_price(v):
     if pd.isna(v):
@@ -28,36 +32,31 @@ def clean_price(v):
         return None
 
 def extract_block(df, start_keyword, tag):
-    """
-    Extract AC or MOISTURE block safely.
-    ALWAYS returns (dates, data_dict)
-    """
     data = {}
     dates = []
 
-    # find start row
+    # find block start (emoji-safe)
     start_idx = df[df.iloc[:, 0].astype(str)
                    .str.contains(start_keyword, case=False, na=False)].index
 
     if len(start_idx) == 0:
-        return dates, data   # ✅ SAFE RETURN
+        return dates, data
 
     i = start_idx[0] + 1
 
-    # find date row
+    # find date row (scan whole row)
     while i < len(df):
-        cell = df.iloc[i, 1]
-        if isinstance(cell, str) and re.search(r"\d{2}-[A-Za-z]{3}", cell):
-            dates = df.iloc[i, 1:].tolist()
+        if row_has_date(df.iloc[i]):
+            dates = [c for c in df.iloc[i].tolist() if isinstance(c, str) and "-" in c]
             break
         i += 1
 
     if not dates:
-        return dates, data   # ✅ SAFE RETURN
+        return dates, data
 
     i += 1
 
-    # parse variety rows
+    # parse varieties
     while i < len(df):
         row = df.iloc[i]
         name = str(row[0]).strip()
@@ -67,14 +66,24 @@ def extract_block(df, start_keyword, tag):
             continue
 
         upper = name.upper()
-        if any(x in upper for x in ["NOTE", "NAMMA", "APMC", "PRICES", "CALCULATE"]):
+
+        # stop conditions
+        if any(x in upper for x in [
+            "NOTE", "NAMMA", "APMC", "PRICES", "CALCULATE",
+            "ARRIVAL", "BAGS", "ADDRESS"
+        ]):
             break
 
         prices = [clean_price(v) for v in row[1:1+len(dates)]]
-        data[f"{name} | {tag}"] = prices
+
+        # detect real variety row (at least one numeric price)
+        if any(p is not None for p in prices):
+            data[f"{name} | {tag}"] = prices
+
         i += 1
 
-    return dates, data   # ✅ ALWAYS TWO VALUES
+    return dates, data
+
 
 
 # ================= MAIN =================
