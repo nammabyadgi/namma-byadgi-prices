@@ -1,535 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Namma Byadgi - Chilli Price Dashboard</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        header {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        header h1 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 2em;
-        }
-        
-        header .subtitle {
-            color: #666;
-            font-size: 0.95em;
-        }
-        
-        header .last-updated {
-            color: #999;
-            font-size: 0.85em;
-            margin-top: 10px;
-        }
-        
-        .controls {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        
-        .control-group {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .control-group label {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 8px;
-            font-size: 0.9em;
-        }
-        
-        .control-group select {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 0.95em;
-        }
-        
-        .control-group select:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-        
-        .button-group {
-            display: flex;
-            gap: 10px;
-            margin-top: auto;
-        }
-        
-        button {
-            flex: 1;
-            padding: 10px 15px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 0.9em;
-        }
-        
-        button:hover {
-            background: #764ba2;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-        }
-        
-        button.secondary {
-            background: #e0e0e0;
-            color: #333;
-        }
-        
-        button.secondary:hover {
-            background: #d0d0d0;
-        }
-        
-        .charts-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .chart-card {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .chart-card h3 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.1em;
-        }
-        
-        .chart-card canvas {
-            max-height: 400px;
-        }
-        
-        .data-table {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            overflow-x: auto;
-        }
-        
-        .data-table h3 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.1em;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9em;
-        }
-        
-        th {
-            background: #667eea;
-            color: white;
-            padding: 12px;
-            text-align: left;
-            font-weight: 600;
-        }
-        
-        td {
-            padding: 12px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        tr:hover {
-            background: #f5f5f5;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .stat-card {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .stat-card .label {
-            color: #999;
-            font-size: 0.85em;
-            margin-bottom: 8px;
-        }
-        
-        .stat-card .value {
-            color: #333;
-            font-size: 1.8em;
-            font-weight: 700;
-        }
-        
-        @media (max-width: 768px) {
-            .charts-container {
-                grid-template-columns: 1fr;
-            }
-            header h1 {
-                font-size: 1.5em;
-            }
-            .controls {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Namma Byadgi – Chilli Market Intelligence</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+
+<style>
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  padding:16px;
+}
+.container{max-width:1400px;margin:auto;}
+.card{
+  background:#fff;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 4px 10px rgba(0,0,0,.12);
+  margin-bottom:18px;
+}
+header{text-align:center;}
+header h1{font-size:2rem;margin-bottom:6px;}
+.subtitle{color:#555;font-size:.95rem;}
+.last-updated{color:#888;font-size:.8rem;margin-top:6px;}
+
+.controls{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px;
+}
+label{font-weight:600;font-size:.85rem;}
+select,button{
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  font-size:.9rem;
+}
+button{
+  background:#667eea;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+button.secondary{background:#e5e5e5;color:#333;}
+button:hover{opacity:.9;}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:14px;
+}
+.stat{text-align:center;}
+.stat .label{font-size:.75rem;color:#777;}
+.stat .value{font-size:1.4rem;font-weight:700;}
+
+.charts{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(600px,1fr));
+  gap:18px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.85rem;
+}
+th{
+  background:#667eea;
+  color:#fff;
+  padding:10px;
+  text-align:left;
+}
+td{
+  padding:9px;
+  border-bottom:1px solid #eee;
+}
+tr:hover{background:#f6f6f6;}
+
+@media(max-width:768px){
+  .charts{grid-template-columns:1fr;}
+  header h1{font-size:1.4rem;}
+  .stat .value{font-size:1.15rem;}
+  table{font-size:.8rem;}
+  th,td{padding:7px;}
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>🌶️Namma Byadgi - Chilli Price Dashboard🌶️</h1>
-            <p class="subtitle">Real-time APMC market prices</p>
-            <p class="last-updated">Last Updated: <span id="lastUpdated">Loading...</span></p>
-        </header>
-        
-        <div class="controls">
-            <div class="control-group">
-                <label>Select Variety</label>
-                <select id="varietySelect">
-                    <option value="">-- All Varieties --</option>
-                </select>
-            </div>
-            
-            <div class="control-group">
-                <label>Chart Type</label>
-                <select id="chartTypeSelect">
-                    <option value="line">Line Chart</option>
-                    <option value="bar">Bar Chart</option>
-                </select>
-            </div>
-            
-            <div class="control-group">
-                <div class="button-group">
-                    <button onclick="updateChart()">Update Chart</button>
-                    <button class="secondary" onclick="resetFilters()">Reset</button>
-                </div>
-            </div>
-        </div>
-        
-        <div class="stats-grid" id="statsContainer"></div>
-        
-        <div class="charts-container">
-            <div class="chart-card">
-                <h3>Price Trend</h3>
-                <canvas id="trendChart"></canvas>
-            </div>
-            
-            <div class="chart-card">
-                <h3>Latest Prices</h3>
-                <canvas id="latestChart"></canvas>
-            </div>
-        </div>
-        
-        <div class="data-table">
-            <h3>Current Market Rates (Latest)</h3>
-            <table id="dataTable">
-                <thead>
-                    <tr>
-                        <th>Variety</th>
-                        <th>Price (₹)</th>
-                        <th>Change</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody"></tbody>
-            </table>
-        </div>
-    </div>
-    
-    <script>
-        let globalData = null;
-        let trendChart = null;
-        let latestChart = null;
-        
-        async function loadData() {
-            try {
-                const response = await fetch('data.json');
-                if (!response.ok) throw new Error('Failed to load data');
-                globalData = await response.json();
-                
-                if (!globalData.varieties || globalData.varieties.length === 0) {
-                    document.body.innerHTML = '<div style="padding:20px; color:red; font-size:18px;">❌ No varieties found. Run Python script again.</div>';
-                    return;
-                }
-                
-                document.getElementById('lastUpdated').textContent =
-                new Date(globalData.last_updated).toLocaleString('en-IN', {
-                    day: '2-digit',
-                    month: '2-digit',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    hour12: false
-                });
+<div class="container">
 
-                
-                populateVarietySelect();
-                updateChart();
-                updateTable();
-                updateStats();
-            } catch (error) {
-                console.error('Error:', error);
-                document.body.innerHTML = '<div style="padding:20px; color:red;">Error: ' + error + '</div>';
-            }
+<header class="card">
+  <h1>🌶️ Namma Byadgi</h1>
+  <p class="subtitle">APMC Byadgi – Prices & Arrivals Intelligence</p>
+  <p class="last-updated">Last Updated: <span id="lastUpdated">–</span></p>
+</header>
+
+<div class="card controls">
+  <div>
+    <label>Market Type</label>
+    <select id="marketToggle">
+      <option value="ALL">All</option>
+      <option value="AC">A/C Cold Storage</option>
+      <option value="NEW">New Crop</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Variety</label>
+    <select id="varietySelect">
+      <option value="">All Varieties</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Chart Type</label>
+    <select id="chartType">
+      <option value="line">Line</option>
+      <option value="bar">Bar</option>
+    </select>
+  </div>
+
+  <div style="display:flex;gap:8px;align-items:end">
+    <button onclick="updateChart()">Update</button>
+    <button class="secondary" onclick="resetFilters()">Reset</button>
+  </div>
+</div>
+
+<div class="card stats-grid" id="stats"></div>
+
+<div class="charts">
+  <div class="card">
+    <h3>Price vs Arrivals (₹ / Quintal & Bags)</h3>
+    <canvas id="priceChart"></canvas>
+  </div>
+  <div class="card">
+    <h3>Arrivals Trend (Bags)</h3>
+    <canvas id="arrivalChart"></canvas>
+  </div>
+</div>
+
+<div class="card">
+<h3>Latest Market Prices</h3>
+<table>
+<thead>
+<tr>
+  <th>Variety</th>
+  <th>Price (₹)</th>
+  <th>WoW %</th>
+</tr>
+</thead>
+<tbody id="tableBody"></tbody>
+</table>
+</div>
+
+</div>
+
+<script>
+let DATA=null, priceChart=null, arrivalChart=null;
+
+async function loadData(){
+  const res=await fetch('data.json');
+  DATA=await res.json();
+
+  document.getElementById('lastUpdated').textContent =
+    new Date(DATA.last_updated).toLocaleString('en-IN');
+
+  populateVarieties();
+  updateStats();
+  updateChart();
+  updateArrivalChart();
+  updateTable();
+}
+
+function populateVarieties(){
+  const s=document.getElementById('varietySelect');
+  DATA.varieties.forEach(v=>{
+    const o=document.createElement('option');
+    o.value=v;o.textContent=v;
+    s.appendChild(o);
+  });
+}
+
+function getFilteredVarieties(){
+  const market=document.getElementById('marketToggle').value;
+  let vars=[...DATA.varieties];
+
+  if(market==="AC") vars=vars.filter(v=>v.includes("(AC)"));
+  if(market==="NEW") vars=vars.filter(v=>v.toLowerCase().includes("moisture"));
+
+  const sel=document.getElementById('varietySelect').value;
+  if(sel) vars=[sel];
+
+  return vars;
+}
+
+function updateStats(){
+  const i=DATA.dates.length-1;
+  const stats=document.getElementById('stats');
+  stats.innerHTML='';
+
+  const acArr=DATA.arrivals?.AC?.[i];
+  const ncArr=DATA.arrivals?.["New Crop"]?.[i];
+
+  const prices=getFilteredVarieties()
+    .map(v=>DATA.prices[v]?.[i])
+    .filter(v=>v);
+
+  const top=Math.max(...prices);
+  const avg=Math.round(prices.reduce((a,b)=>a+b,0)/prices.length);
+
+  [
+    {l:'AC Arrivals',v:acArr?.toLocaleString()||'-',s:'bags'},
+    {l:'New Crop Arrivals',v:ncArr?.toLocaleString()||'-',s:'bags'},
+    {l:'Top Price',v:'₹'+top.toLocaleString()},
+    {l:'Avg Price',v:'₹'+avg.toLocaleString()},
+    {l:'Varieties',v:getFilteredVarieties().length}
+  ].forEach(x=>{
+    const d=document.createElement('div');
+    d.className='stat';
+    d.innerHTML=`<div class="label">${x.l}</div>
+                 <div class="value">${x.v}</div>
+                 ${x.s?`<div class="label">${x.s}</div>`:''}`;
+    stats.appendChild(d);
+  });
+}
+
+function updateChart(){
+  const ctx=document.getElementById('priceChart');
+  if(priceChart)priceChart.destroy();
+
+  const vars=getFilteredVarieties();
+  const market=document.getElementById('marketToggle').value;
+
+  const priceSets=vars.map((v,i)=>({
+    label:v,
+    data:DATA.prices[v],
+    type:'line',
+    yAxisID:'y',
+    borderColor:`hsl(${i*40},70%,50%)`,
+    backgroundColor:`hsla(${i*40},70%,50%,.15)`,
+    tension:.3
+  }));
+
+  const arrivals = (market==="NEW")
+      ? DATA.arrivals["New Crop"]
+      : DATA.arrivals.AC;
+
+  priceSets.push({
+    label:'Arrivals (Bags)',
+    data:arrivals,
+    type:'bar',
+    yAxisID:'y1',
+    backgroundColor:'rgba(0,0,0,.15)'
+  });
+
+  priceChart=new Chart(ctx,{
+    data:{labels:DATA.dates,datasets:priceSets},
+    options:{
+      responsive:true,
+      scales:{
+        y:{title:{display:true,text:'Price (₹ / Quintal)'}},
+        y1:{
+          beginAtZero:true,
+          position:'right',
+          grid:{drawOnChartArea:false},
+          title:{display:true,text:'Arrivals (Bags)'}
         }
-        
-        function populateVarietySelect() {
-            const select = document.getElementById('varietySelect');
-            globalData.varieties.forEach(v => {
-                const option = document.createElement('option');
-                option.value = v;
-                option.textContent = v;
-                select.appendChild(option);
-            });
-        }
-        
-        function updateChart() {
-            const varietySelect = document.getElementById('varietySelect').value;
-            const chartType = document.getElementById('chartTypeSelect').value;
-            
-            let varieties = varietySelect ? [varietySelect] : globalData.varieties;
-            let labels = globalData.dates;
-            let datasets = [];
-            
-            varieties.forEach((v, idx) => {
-                const prices = globalData.ac_prices[v] || [];
+      }
+    }
+  });
+}
 
-                
-            // const interp = globalData.interpolated[v] || [];
+function updateArrivalChart(){
+  const ctx=document.getElementById('arrivalChart');
+  if(arrivalChart)arrivalChart.destroy();
 
-            datasets.push({
-                label: v,
-                data: prices,
-                borderColor: `hsl(${idx * 60}, 70%, 50%)`,
-                backgroundColor: `hsla(${idx * 60}, 70%, 50%, 0.1)`,
-                tension: 0.3,
-                fill: false,
-                borderWidth: 2,
+  arrivalChart=new Chart(ctx,{
+    type:'bar',
+    data:{
+      labels:DATA.dates,
+      datasets:[
+        {label:'AC',data:DATA.arrivals.AC,backgroundColor:'rgba(34,197,94,.6)'},
+        {label:'New Crop',data:DATA.arrivals["New Crop"],backgroundColor:'rgba(59,130,246,.6)'}
+      ]
+    },
+    options:{responsive:true}
+  });
+}
 
-            pointRadius: 5,
-            pointBackgroundColor: `hsl(${idx * 60}, 70%, 50%)`,
-            pointBorderWidth: 0,
-            pointBorderColor: `hsl(${idx * 60}, 70%, 50%)`
+function updateTable(){
+  const tb=document.getElementById('tableBody');
+  tb.innerHTML='';
+  const i=DATA.dates.length-1;
 
-            });
+  getFilteredVarieties().forEach(v=>{
+    const p=DATA.prices[v]?.[i];
+    const w=DATA.wow_change[v]?.[i];
+    const tr=document.createElement('tr');
+    tr.innerHTML=`
+      <td>${v}</td>
+      <td>${p?('₹'+p.toLocaleString()):'-'}</td>
+      <td style="color:${w>0?'#16a34a':w<0?'#dc2626':'#999'}">
+        ${w!=null?(w>0?'+':'')+w+'%':'-'}
+      </td>`;
+    tb.appendChild(tr);
+  });
+}
 
+function resetFilters(){
+  document.getElementById('marketToggle').value='ALL';
+  document.getElementById('varietySelect').value='';
+  updateChart();updateStats();updateTable();
+}
 
-            });
-            
-            const ctx = document.getElementById('trendChart').getContext('2d');
-            if (trendChart) trendChart.destroy();
-            
-            trendChart = new Chart(ctx, {
-            type: chartType,
-            data: { labels, datasets },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: 'top'
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function (ctx) {
-                                const v = ctx.dataset.label;
-                                const idx = ctx.dataIndex;
-                                const price = ctx.parsed.y;
-                                // const isInterp = globalData.interpolated[v]?.[idx];
-                                const isInterp = false;
-                                if (price === null) return `${v}: -`;
-                                    return `${v}: ₹${price}${isInterp ? ' (Interpolated)' : ''}`;
-                            }
-                        }
-                    }
-                },
-
-                scales: {
-                    y: { beginAtZero: false }
-                }
-            }
-        });
-
-            
-            updateLatestChart();
-        }
-        
-        function updateLatestChart() {
-            const lastIdx = globalData.dates.length - 1;
-            let labels = [];
-            let data = [];
-            
-            globalData.varieties.forEach(v => {
-                const price = globalData.ac_prices[v]?.[lastIdx];
-                if (price) {
-                    labels.push(v);
-                    data.push(price);
-                }
-            });
-            
-            const ctx = document.getElementById('latestChart').getContext('2d');
-            if (latestChart) latestChart.destroy();
-            
-            latestChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels,
-                    datasets: [{
-                        label: 'Price',
-                        data,
-                        backgroundColor: 'rgba(102, 126, 234, 0.7)',
-                        borderColor: 'rgb(102, 126, 234)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    plugins: { legend: { display: false } },
-                    scales: { y: { beginAtZero: false } }
-                }
-            });
-        }
-        
-        function updateTable() {
-            const tbody = document.getElementById('tableBody');
-            tbody.innerHTML = '';
-            
-            const lastIdx = globalData.dates.length - 1;
-            const prevIdx = lastIdx > 0 ? lastIdx - 1 : lastIdx;
-            
-            globalData.varieties.forEach(v => {
-                const lastPrice = globalData.ac_prices[v]?.[lastIdx];
-                const prevPrice = globalData.ac_prices[v]?.[prevIdx];
-                // const change = lastPrice && prevPrice ? lastPrice - prevPrice : null;
-                const wow = globalData.wow_change[v]?.[lastIdx];
-                
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td><strong>${v}</strong></td>
-                    <td>₹${lastPrice ? lastPrice.toLocaleString() : '-'}</td>
-                    <td style="
-                        color: ${wow > 0 ? '#22c55e' : wow < 0 ? '#ef4444' : '#999'};
-                        font-weight: 600;
-                    ">
-                        ${wow !== null ? (wow > 0 ? '+' : '') + wow + '%' : '-'}
-                    </td>
-
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-        
-        function updateStats() {
-            const statsContainer = document.getElementById('statsContainer');
-            statsContainer.innerHTML = '';
-            
-            const lastIdx = globalData.dates.length - 1;
-            
-            let topPrice = { variety: '', price: 0 };
-            let avgPrice = 0;
-            let count = 0;
-            
-            globalData.varieties.forEach(v => {
-                const price = globalData.ac_prices[v]?.[lastIdx];
-                if (price) {
-                    if (price > topPrice.price) topPrice = { variety: v, price };
-                    avgPrice += price;
-                    count++;
-                }
-            });
-            
-            avgPrice = count > 0 ? Math.round(avgPrice / count) : 0;
-            
-            const stats = [
-                { label: 'Top Price', value: topPrice.variety, subtext: '₹' + topPrice.price.toLocaleString() },
-                { label: 'Avg Price', value: '₹' + avgPrice.toLocaleString(), subtext: '' },
-                { label: 'Total Varieties', value: globalData.varieties.length, subtext: 'tracked' },
-                { label: 'Latest Date', value: globalData.dates[lastIdx], subtext: '' },
-                {
-                label: 'Avg WoW Change',
-                value: (() => {
-                    const vals = globalData.varieties
-                        .map(v => globalData.wow_change[v]?.[lastIdx])
-                        .filter(v => v !== null);
-                    if (vals.length === 0) return '0%';
-                    const avg = Math.round(vals.reduce((a,b)=>a+b,0) / vals.length);
-                    return avg + '%';
-                })(),
-                subtext: 'week-on-week'
-                }
-
-
-            ];
-            
-            stats.forEach(stat => {
-                const div = document.createElement('div');
-                div.className = 'stat-card';
-                div.innerHTML = `
-                    <div class="label">${stat.label}</div>
-                    <div class="value">${stat.value}</div>
-                    ${stat.subtext ? '<div class="label">' + stat.subtext + '</div>' : ''}
-                `;
-                statsContainer.appendChild(div);
-            });
-        }
-        
-        function resetFilters() {
-            document.getElementById('varietySelect').value = '';
-            document.getElementById('chartTypeSelect').value = 'line';
-            updateChart();
-        }
-        
-        loadData();
-    </script>
+loadData();
+</script>
 </body>
 </html>

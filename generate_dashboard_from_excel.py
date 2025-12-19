@@ -1,131 +1,69 @@
-import pandas as pd
 import json
-import re
 from datetime import datetime
 import os
-import numpy as np
 
-# ================= CONFIG =================
-EXCEL_FILE = r"C:\Users\mrmay\Downloads\APMC Prices\web\Byadgi_Chilli_Prices.xlsx"
-SHEET_NAME = 0   # first sheet
 OUTPUT_FOLDER = r"C:\Users\mrmay\Downloads\APMC Prices\web"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
-# ================= HELPERS =================
-def row_has_date(row):
-    for cell in row:
-        if isinstance(cell, str) and re.search(r"\d{2}-[A-Za-z]{3}", cell):
-            return True
-    return False
+DATES = [
+    "06-Nov", "13-Nov", "20-Nov", "24-Nov", "27-Nov",
+    "01-Dec", "04-Dec", "08-Dec", "11-Dec", "15-Dec", "18-Dec"
+]
+
+AC_PRICES = {
+    "Dabbi DLX (AC)":        [34500, 48000, 36000, 35000, 35000, 33000, 33000, 28000, 28000, 36000, 35000],
+    "Dabbi BEST (AC)":       [31000, 44000, 35000, 33000, 33000, 30000, 28000, 22000, 23000, 28000, 33000],
+    "Dabbi Medium BEST (AC)":[28000, 34000, 23000, 23000, 23000, 18000, 18000, 18000, 18000, 23000, 25000],
+    "Dabbi Medium (AC)":     [25000, 30000, 18000, 18000, 18000, 16000, 16000, 16000, 16000, 16000, 18000],
+    "KDL DLX (AC)":          [29000, 36000, 35000, 30000, 24000, 27000, 24000, 24000, 29500, 25000, 32000],
+    "KDL BEST (AC)":         [28000, 34000, 33000, 28000, 18000, 24000, 21000, 21000, 24000, 22000, 28000],
+    "KDL Medium Best":       [26000, 32000, 24000, 24000, None, 20000, 19000, 19000, 22000, 20000, 24000],
+    "KDL Medium (AC)":       [24000, 30000, 22000, 18000, None, 16000, 16000, 16000, 18000, 18000, 20000],
+    "KDL Fatki (AC)":        [7500, 8500, 7500, 6500, 6500, 6500, 6500, 6500, 6800, 6800, 6900],
+    "Syngenta 2043 (AC)":    [19000, 28000, 23000, 25000, 23500, 20000, 19000, 17000, 17000, 24500, 22000],
+    "Syngenta 5531 (AC)":    [15700, 16000, 15500, 15000, 14500, 14500, 14500, 15000, 15000, 15000, 15000],
+    "Seed Qty (AC)":         [15000, 15500, 15500, 15500, 15500, 15000, 14000, 14000, None, None, 14000],
+    "Seed Fatki (AC)":       [9000, 9000, 9000, 9000, 9000, 9000, 9000, 9000, None, None, 9000]
+}
+
+NEW_CROP_PRICES = {
+    "Dabbi DLX (moisture)":        [None, 55500, 40000, 56770, 62100, 60100, 64500, 68500, 55500, 55000, 55000],
+    "Dabbi BEST (moisture)":       [None, None, 38000, 43000, 36000, 38000, 54100, 55000, 50000, 50000, 50000],
+    "Dabbi Medium BEST (moisture)":[None, 30000, None, 39000, 36000, 38000, 39000, 46000, 46000, 46000, 46000],
+    "Dabbi Medium (moisture)":     [None, None, None, None, 35000, 35200, 35600, 36000, 40000, 40000, 40000],
+    "Dabbi FATKI (moisture)":      [None, 4000, None, None, 4000, 4200, 4360, 4500, 4500, 4500, 4500],
+    "Local KDL (moisture)":        [None, None, None, 38500, 42500, 42500, 42000, 40000, 48000, 45000, 43000],
+    "KDL DLX (moisture)":          [None, 41000, 38500, 43000, 44000, 35000, 35000, 45000, 44000, 43000, 55500],
+    "KDL BEST (moisture)":         [None, 38000, 35000, 39000, 33000, 30000, 30000, 40000, 37000, 36000, 41000],
+    "KDL Medium BEST (moisture)":  [None, 35000, 14000, 16000, 27000, 29000, 29000, 36000, 36000, 35000, 40000],
+    "KDL Medium (moisture)":       [None, 28000, 11000, 11000, 17000, 24000, 24000, 30000, 30000, 30000, 35000],
+    "KDL Fatki (moisture)":        [None, 3200, 7000, 8000, 8000, 7500, 7500, 7500, 7500, 7500, 6500]
+}
 
 
-def clean_price(v):
-    if pd.isna(v):
-        return None
-    if isinstance(v, str):
-        v = v.replace(",", "").strip()
-        if v in ("--", "—", "-", ""):
-            return None
-    try:
-        return int(float(v))
-    except:
-        return None
+# Merge both
+ALL_PRICES = {**AC_PRICES, **NEW_CROP_PRICES}
 
-def extract_block(df, start_keyword, tag):
-    data = {}
-    dates = []
+# WoW change
+wow_change = {}
+for v, prices in ALL_PRICES.items():
+    wow = []
+    for i in range(len(prices)):
+        if i == 0 or prices[i] is None or prices[i-1] is None:
+            wow.append(None)
+        else:
+            wow.append(round(((prices[i] - prices[i-1]) / prices[i-1]) * 100, 2))
+    wow_change[v] = wow
 
-    # find block start (emoji-safe)
-    start_idx = df[df.iloc[:, 0].astype(str)
-                   .str.contains(start_keyword, case=False, na=False)].index
+output = {
+    "dates": DATES,
+    "varieties": sorted(ALL_PRICES.keys()),
+    "ac_prices": ALL_PRICES,
+    "wow_change": wow_change,
+    "last_updated": datetime.utcnow().isoformat() + "Z"
+}
 
-    if len(start_idx) == 0:
-        return dates, data
+with open(os.path.join(OUTPUT_FOLDER, "data.json"), "w", encoding="utf-8") as f:
+    json.dump(output, f, indent=2, ensure_ascii=False)
 
-    i = start_idx[0] + 1
-
-    # find date row (scan whole row)
-    while i < len(df):
-        if row_has_date(df.iloc[i]):
-            dates = [c for c in df.iloc[i].tolist() if isinstance(c, str) and "-" in c]
-            break
-        i += 1
-
-    if not dates:
-        return dates, data
-
-    i += 1
-
-    # parse varieties
-    while i < len(df):
-        row = df.iloc[i]
-        name = str(row[0]).strip()
-
-        if not name:
-            i += 1
-            continue
-
-        upper = name.upper()
-
-        # stop conditions
-        if any(x in upper for x in [
-            "NOTE", "NAMMA", "APMC", "PRICES", "CALCULATE",
-            "ARRIVAL", "BAGS", "ADDRESS"
-        ]):
-            break
-
-        prices = [clean_price(v) for v in row[1:1+len(dates)]]
-
-        # detect real variety row (at least one numeric price)
-        if any(p is not None for p in prices):
-            data[f"{name} | {tag}"] = prices
-
-        i += 1
-
-    return dates, data
-
-
-
-# ================= MAIN =================
-def main():
-    df = pd.read_excel(EXCEL_FILE, sheet_name=SHEET_NAME, header=None)
-
-    ac_dates, ac_data = extract_block(df, "A/C COLD STORAGE", "AC")
-    moist_dates, moist_data = extract_block(df, "NEW CROP", "MOISTURE")
-
-    # prefer AC dates as master (same structure)
-    # dates = ac_dates or moist_dates
-    dates = ac_dates if ac_dates else moist_dates
-
-
-    all_prices = {}
-    all_prices.update(ac_data)
-    all_prices.update(moist_data)
-
-    varieties = sorted(all_prices.keys())
-
-    wow_change = {}
-    for v, prices in all_prices.items():
-        wow = []
-        for i in range(len(prices)):
-            if i == 0 or prices[i] is None or prices[i-1] is None:
-                wow.append(None)
-            else:
-                wow.append(round(((prices[i] - prices[i-1]) / prices[i-1]) * 100, 2))
-        wow_change[v] = wow
-
-    output = {
-        "dates": dates,
-        "varieties": varieties,
-        "ac_prices": all_prices,
-        "wow_change": wow_change,
-        "last_updated": datetime.utcnow().isoformat() + "Z"
-    }
-
-    with open(os.path.join(OUTPUT_FOLDER, "data.json"), "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
-
-    print("✅ Dashboard data generated successfully")
-
-if __name__ == "__main__":
-    main()
+print("✅ HARD-CODED DATA.JSON GENERATED SUCCESSFULLY")
