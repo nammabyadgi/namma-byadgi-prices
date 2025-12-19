@@ -40,6 +40,11 @@ NEW_CROP_PRICES = {
     "KDL Fatki (moisture)":        [None, 3200, 7000, 8000, 8000, 7500, 7500, 7500, 7500, 7500, 6500]
 }
 
+ARRIVALS = {
+    "AC": [40000, 80000, 60000, 40000, 30000, 30000, 20000, 12000, 15000, 15000, 15000],
+    "New Crop": [None, 1000, 4000, 5000, 13000, 25000, 20000, 25000, 24000, 41000, 39000]
+}
+
 
 # Merge both
 ALL_PRICES = {**AC_PRICES, **NEW_CROP_PRICES}
@@ -55,13 +60,19 @@ for v, prices in ALL_PRICES.items():
             wow.append(round(((prices[i] - prices[i-1]) / prices[i-1]) * 100, 2))
     wow_change[v] = wow
 
-output = {
-    "dates": DATES,
-    "varieties": sorted(ALL_PRICES.keys()),
-    "ac_prices": ALL_PRICES,
-    "wow_change": wow_change,
-    "last_updated": datetime.utcnow().isoformat() + "Z"
-}
+    output = {
+        "dates": [
+            "06 Nov 2025", "13 Nov 2025", "20 Nov 2025", "24 Nov 2025",
+            "27 Nov 2025", "01 Dec 2025", "04 Dec 2025",
+            "08 Dec 2025", "11 Dec 2025", "15 Dec 2025", "18 Dec 2025"
+        ],
+        "varieties": sorted(ALL_PRICES.keys()),
+        "prices": ALL_PRICES,
+        "arrivals": ARRIVALS,
+        "wow_change": wow_change,
+        "last_updated": datetime.utcnow().isoformat() + "Z"
+    }
+
 
 with open(os.path.join(OUTPUT_FOLDER, "data.json"), "w", encoding="utf-8") as f:
     json.dump(output, f, indent=2, ensure_ascii=False)
