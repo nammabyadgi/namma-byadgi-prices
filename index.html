@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namma Byadgi - Dry Chili Price Dashboard</title>
-    <meta name="description" content="Real-time dry red chili prices from APMC Byadgi, Karnataka. Track price trends for Dabbi, KDL, and Syngenta varieties.">
+    <meta name="description" content="Real-time dry red chili prices from APMC Byadgi, Karnataka. Track AC Storage and New Crop price trends.">
     
     <!-- Chart.js for graphs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -21,6 +21,8 @@
             --color-success: #4caf50;
             --color-warning: #ff9800;
             --color-error: #f44336;
+            --color-ac: #1976d2;
+            --color-new: #d32f2f;
         }
 
         * {
@@ -82,9 +84,51 @@
 
         /* Container */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
+        }
+
+        /* Info Banner */
+        .info-banner {
+            background: linear-gradient(135deg, var(--color-ac) 0%, var(--color-new) 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .info-banner-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-badge {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .info-badge.ac {
+            background: rgba(25, 118, 210, 0.5);
+        }
+
+        .info-badge.new {
+            background: rgba(211, 47, 47, 0.5);
         }
 
         /* Navigation */
@@ -123,7 +167,7 @@
         /* Grid */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 20px;
             margin: 20px 0;
         }
@@ -147,12 +191,14 @@
             justify-content: space-between;
             align-items: start;
             margin-bottom: 15px;
+            flex-wrap: wrap;
         }
 
         .card-title {
             font-size: 1.3rem;
             font-weight: 600;
             color: var(--color-primary);
+            flex: 1;
         }
 
         .card-badge {
@@ -163,6 +209,7 @@
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
+            margin-top: 5px;
         }
 
         .card-badge.premium {
@@ -173,11 +220,69 @@
             background: #2196f3;
         }
 
-        .price-display {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--color-primary);
+        /* Dual Price Display */
+        .price-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
             margin: 15px 0;
+        }
+
+        .price-box {
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .price-box.ac {
+            background: linear-gradient(135deg, rgba(25, 118, 210, 0.1) 0%, rgba(25, 118, 210, 0.05) 100%);
+            border: 2px solid var(--color-ac);
+        }
+
+        .price-box.new {
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.1) 0%, rgba(211, 47, 47, 0.05) 100%);
+            border: 2px solid var(--color-new);
+        }
+
+        .price-box-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .price-box-label.ac {
+            color: var(--color-ac);
+        }
+
+        .price-box-label.new {
+            color: var(--color-new);
+        }
+
+        .price-box-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 8px;
+        }
+
+        .price-box-change {
+            font-size: 0.85rem;
+        }
+
+        .trend-up {
+            color: var(--color-success);
+        }
+
+        .trend-down {
+            color: var(--color-error);
+        }
+
+        .price-box-change.na {
+            color: var(--color-text-light);
+            font-style: italic;
         }
 
         .price-info {
@@ -198,12 +303,13 @@
             color: var(--color-text-light);
             font-weight: 500;
             margin-bottom: 4px;
+            font-size: 0.8rem;
         }
 
         .info-value {
             font-weight: 600;
             color: var(--color-text);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         /* Chart Container */
@@ -219,6 +325,33 @@
             color: var(--color-primary);
             margin-bottom: 20px;
             font-size: 1.3rem;
+        }
+
+        .chart-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .chart-controls button {
+            padding: 8px 16px;
+            border: 1px solid var(--color-border);
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .chart-controls button.active {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+
+        .chart-controls button:hover {
+            border-color: var(--color-primary);
         }
 
         .canvas-wrapper {
@@ -241,10 +374,16 @@
             overflow-x: auto;
         }
 
+        .table-container h3 {
+            color: var(--color-primary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         th {
@@ -253,6 +392,14 @@
             padding: 12px;
             text-align: left;
             font-weight: 600;
+        }
+
+        th.ac-col {
+            background: var(--color-ac);
+        }
+
+        th.new-col {
+            background: var(--color-new);
         }
 
         td {
@@ -269,12 +416,12 @@
             color: var(--color-primary);
         }
 
-        .trend-up {
-            color: var(--color-success);
+        .price-cell.ac {
+            color: var(--color-ac);
         }
 
-        .trend-down {
-            color: var(--color-error);
+        .price-cell.new {
+            color: var(--color-new);
         }
 
         /* Footer */
@@ -327,16 +474,25 @@
                 width: 100%;
             }
 
-            .price-display {
-                font-size: 1.5rem;
+            .price-comparison {
+                grid-template-columns: 1fr;
             }
 
-            .card-header {
+            .price-box-value {
+                font-size: 1.4rem;
+            }
+
+            .info-banner {
                 flex-direction: column;
+                gap: 15px;
             }
 
-            .card-badge {
-                margin-top: 10px;
+            table {
+                font-size: 0.8rem;
+            }
+
+            th, td {
+                padding: 8px;
             }
         }
 
@@ -378,6 +534,26 @@
             font-size: 0.85rem;
             color: var(--color-text-light);
         }
+
+        .badge-ac {
+            display: inline-block;
+            background: rgba(25, 118, 210, 0.2);
+            color: var(--color-ac);
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-new {
+            display: inline-block;
+            background: rgba(211, 47, 47, 0.2);
+            color: var(--color-new);
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -387,7 +563,7 @@
             <span class="emoji">🌶️</span>
             Namma Byadgi Prices
         </h1>
-        <p>Real-time Dry Red Chili Price Trends</p>
+        <p>AC Storage vs New Crop - Real-time Price Tracking</p>
         <div class="header-meta">
             <span>📍 APMC Byadgi, Haveri, Karnataka</span>
             <span>📞 +91 7829110958</span>
@@ -397,12 +573,30 @@
 
     <!-- Main Content -->
     <div class="container">
+        <!-- Info Banner -->
+        <div class="info-banner">
+            <div class="info-banner-item">
+                <div class="info-badge ac">AC</div>
+                <div>
+                    <strong>AC Storage (Old Chilli)</strong>
+                    <br><small>Cold storage, looks good but less color when powdered</small>
+                </div>
+            </div>
+            <div class="info-banner-item">
+                <div class="info-badge new">NEW</div>
+                <div>
+                    <strong>New Crop (Fresh Arrival)</strong>
+                    <br><small>New harvest with better color, taste & quality</small>
+                </div>
+            </div>
+        </div>
+
         <!-- Filter Navigation -->
         <nav>
-            <button class="filter-btn active" data-filter="all">All Varieties</button>
-            <button class="filter-btn" data-filter="premium">Premium Grade</button>
-            <button class="filter-btn" data-filter="standard">Standard Grade</button>
-            <button class="filter-btn" data-filter="hybrid">Hybrid Varieties</button>
+            <button class="filter-btn active" data-filter="all">📊 All Varieties</button>
+            <button class="filter-btn" data-filter="premium">⭐ Premium Grade</button>
+            <button class="filter-btn" data-filter="standard">✓ Standard Grade</button>
+            <button class="filter-btn" data-filter="hybrid">🔬 Hybrid Varieties</button>
         </nav>
 
         <!-- Price Cards Grid -->
@@ -415,7 +609,12 @@
 
         <!-- Price Trend Chart -->
         <div class="chart-container">
-            <h3>📊 Price Trend Analysis</h3>
+            <h3>📈 Price Trend Analysis</h3>
+            <div class="chart-controls">
+                <button class="chart-control-btn active" data-series="all">Both (AC & New)</button>
+                <button class="chart-control-btn" data-series="ac">AC Storage Only</button>
+                <button class="chart-control-btn" data-series="new">New Crop Only</button>
+            </div>
             <div class="canvas-wrapper">
                 <canvas id="trendChart"></canvas>
             </div>
@@ -423,8 +622,8 @@
 
         <!-- Price Table -->
         <div class="table-container">
-            <h3 style="margin-bottom: 20px;">📋 Complete Price List</h3>
-            <div id="price-table" style="overflow-x: auto;"></div>
+            <h3>📋 Complete Price Table</h3>
+            <div id="price-table"></div>
         </div>
 
         <!-- Abbreviations Help -->
@@ -440,12 +639,12 @@
                     <div class="small">Scoville Heat Units. Measures chili pungency/spiciness</div>
                 </div>
                 <div class="info-item">
-                    <div class="info-label">AC</div>
-                    <div class="small">Air-Conditioned storage. Looks good but less color when powdered</div>
+                    <div class="info-label">AC Storage</div>
+                    <div class="small">Cold stored old chilli. Lower price, less color in powder</div>
                 </div>
                 <div class="info-item">
                     <div class="info-label">New Crop</div>
-                    <div class="small">Fresh harvest with better color & taste. Premium quality</div>
+                    <div class="small">Fresh harvest. Better color, taste & quality. Premium price</div>
                 </div>
             </div>
         </div>
@@ -462,62 +661,37 @@
     </footer>
 
     <script>
-        // Data structure
-        const priceData = {
-            dates: ["06 Nov", "13 Nov", "20 Nov", "24 Nov", "27 Nov", "01 Dec", "04 Dec", "08 Dec", "11 Dec", "15 Dec", "18 Dec", "22 Dec", "29 Dec", "01 Jan"],
-            varieties: {
-                "Dabbi DLX": {
-                    type: "Premium",
-                    asta: "240-260",
-                    shu: "8k-10k",
-                    prices: [34500, 48000, 36000, 35000, 35000, 33000, 33000, 28000, 28000, 36000, 35000, 31000, 31000, 31000]
-                },
-                "Dabbi BEST": {
-                    type: "Standard",
-                    asta: "240-260",
-                    shu: "8k-10k",
-                    prices: [31000, 44000, 35000, 33000, 33000, 30000, 28000, 22000, 23000, 28000, 33000, 28000, 28000, 28000]
-                },
-                "KDL DLX": {
-                    type: "Premium",
-                    asta: "220-260",
-                    shu: "12k-15k",
-                    prices: [29000, 36000, 35000, 30000, 24000, 27000, 24000, 24000, 29500, 25000, 32000, 29000, 28000, 28000]
-                },
-                "KDL BEST": {
-                    type: "Standard",
-                    asta: "220-260",
-                    shu: "12k-15k",
-                    prices: [28000, 34000, 33000, 28000, 18000, 24000, 21000, 21000, 24000, 22000, 28000, 27000, 27000, 27000]
-                },
-                "Syngenta 2043": {
-                    type: "Hybrid",
-                    asta: "150-170",
-                    shu: "18k-25k",
-                    prices: [19000, 28000, 23000, 25000, 23500, 20000, 19000, 17000, 17000, 24500, 22000, 18000, 18000, 19500]
-                },
-                "Syngenta 5531": {
-                    type: "Hybrid",
-                    asta: "140-160",
-                    shu: "45k-50k",
-                    prices: [15700, 16000, 15500, 15000, 14500, 14500, 14500, 15000, 15000, 15000, 15000, 16000, 15000, 15000]
-                }
-            }
-        };
-
+        // Load data from data.json
+        let priceData = {};
         let currentChart = null;
+        let chartSeriesFilter = 'all'; // all, ac, new
 
-        // Initialize page
-        function init() {
-            updateTimestamp();
-            renderPriceCards();
-            renderTrendChart();
-            renderPriceTable();
-            attachFilterListeners();
+        // Fetch and load data
+        async function loadData() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                priceData = data;
+                updateTimestamp(data.metadata.last_updated);
+                renderPriceCards();
+                renderTrendChart();
+                renderPriceTable();
+                attachFilterListeners();
+                attachChartControlListeners();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('price-cards').innerHTML = `
+                    <div class="loading">
+                        <p>⚠️ Error loading price data</p>
+                        <p>Make sure data.json is in the same folder as index.html</p>
+                    </div>
+                `;
+            }
         }
 
-        function updateTimestamp() {
-            document.getElementById('last-updated').textContent = new Date().toLocaleDateString('en-IN', {
+        function updateTimestamp(timestamp) {
+            const date = new Date(timestamp);
+            document.getElementById('last-updated').textContent = date.toLocaleDateString('en-IN', {
                 year: 'numeric',
                 month: 'short',
                 day: 'numeric',
@@ -530,24 +704,51 @@
             const container = document.getElementById('price-cards');
             let html = '';
 
-            for (const [name, data] of Object.entries(priceData.varieties)) {
+            for (const [name, data] of Object.entries(priceData.varieties || {})) {
                 if (filter !== 'all' && data.type.toLowerCase() !== filter) continue;
 
-                const latestPrice = data.prices[data.prices.length - 1];
-                const prevPrice = data.prices[data.prices.length - 2];
-                const change = latestPrice - prevPrice;
-                const changePercent = ((change / prevPrice) * 100).toFixed(2);
-                const trend = change >= 0 ? '📈' : '📉';
+                // Get latest prices (last non-null value)
+                const latestAC = data.prices_ac[data.prices_ac.length - 1];
+                const latestNew = data.prices_new[data.prices_new.length - 1] || data.prices_new.find(p => p !== null);
+                
+                // Calculate changes
+                const prevAC = data.prices_ac[data.prices_ac.length - 2];
+                const prevNew = data.prices_new.filter(p => p !== null)[data.prices_new.filter(p => p !== null).length - 2];
+                
+                const changeAC = prevAC ? latestAC - prevAC : null;
+                const changeNew = prevNew ? latestNew - prevNew : null;
+                
+                const changeACPercent = changeAC && prevAC ? ((changeAC / prevAC) * 100).toFixed(1) : null;
+                const changeNewPercent = changeNew && prevNew ? ((changeNew / prevNew) * 100).toFixed(1) : null;
 
                 const badgeClass = data.type === 'Premium' ? 'premium' : (data.type === 'Hybrid' ? 'hybrid' : '');
 
                 html += `
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title">${name}</div>
-                            <span class="card-badge ${badgeClass}">${data.type}</span>
+                            <div>
+                                <div class="card-title">${name}</div>
+                                <span class="card-badge ${badgeClass}">${data.type}</span>
+                            </div>
                         </div>
-                        <div class="price-display">₹${latestPrice.toLocaleString('en-IN')}</div>
+                        
+                        <div class="price-comparison">
+                            <div class="price-box ac">
+                                <div class="price-box-label ac">AC Storage</div>
+                                <div class="price-box-value">₹${latestAC ? latestAC.toLocaleString('en-IN') : '—'}</div>
+                                <div class="price-box-change ${changeAC >= 0 ? 'trend-up' : 'trend-down'}">
+                                    ${changeACPercent !== null ? (changeAC >= 0 ? '📈 ' : '📉 ') + changeACPercent + '%' : 'No data'}
+                                </div>
+                            </div>
+                            <div class="price-box new">
+                                <div class="price-box-label new">New Crop</div>
+                                <div class="price-box-value">${latestNew ? '₹' + latestNew.toLocaleString('en-IN') : '—'}</div>
+                                <div class="price-box-change ${latestNew && changeNewPercent ? (changeNew >= 0 ? 'trend-up' : 'trend-down') : 'na'}">
+                                    ${latestNew && changeNewPercent !== null ? (changeNew >= 0 ? '📈 ' : '📉 ') + changeNewPercent + '%' : 'Not in market'}
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="price-info">
                             <div class="info-item">
                                 <div class="info-label">ASTA Grade</div>
@@ -557,13 +758,6 @@
                                 <div class="info-label">Pungency</div>
                                 <div class="info-value">${data.shu} SHU</div>
                             </div>
-                        </div>
-                        <div style="background: var(--color-bg); padding: 10px; border-radius: 4px; font-size: 0.9rem;">
-                            <span class="trend-${change >= 0 ? 'up' : 'down'}">
-                                ${trend} ${Math.abs(changePercent)}% ${change >= 0 ? 'increase' : 'decrease'}
-                            </span>
-                            <br>
-                            <span class="small">vs previous week</span>
                         </div>
                     </div>
                 `;
@@ -575,24 +769,51 @@
         function renderTrendChart() {
             const ctx = document.getElementById('trendChart').getContext('2d');
             const datasets = [];
-            const colors = ['#c41530', '#f57c00', '#2196f3', '#4caf50', '#9c27b0', '#ff5722'];
-            let colorIndex = 0;
+            
+            // Color scheme for AC and New Crop
+            let varietyIndex = 0;
+            const colors = ['#1976d2', '#d32f2f', '#388e3c', '#f57c00', '#7b1fa2', '#0288d1'];
 
-            for (const [name, data] of Object.entries(priceData.varieties)) {
-                datasets.push({
-                    label: name,
-                    data: data.prices,
-                    borderColor: colors[colorIndex % colors.length],
-                    backgroundColor: colors[colorIndex % colors.length] + '15',
-                    borderWidth: 2,
-                    tension: 0.4,
-                    fill: false,
-                    pointRadius: 4,
-                    pointBackgroundColor: colors[colorIndex % colors.length],
-                    pointBorderColor: '#fff',
-                    pointBorderWidth: 2
-                });
-                colorIndex++;
+            for (const [name, data] of Object.entries(priceData.varieties || {})) {
+                const color = colors[varietyIndex % colors.length];
+
+                // AC Storage dataset
+                if (chartSeriesFilter === 'all' || chartSeriesFilter === 'ac') {
+                    datasets.push({
+                        label: `${name} (AC)`,
+                        data: data.prices_ac,
+                        borderColor: color,
+                        backgroundColor: color + '15',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: false,
+                        pointRadius: 4,
+                        pointBackgroundColor: color,
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        borderDash: [5, 5] // Dashed line for AC
+                    });
+                }
+
+                // New Crop dataset
+                if (chartSeriesFilter === 'all' || chartSeriesFilter === 'new') {
+                    datasets.push({
+                        label: `${name} (New)`,
+                        data: data.prices_new,
+                        borderColor: color,
+                        backgroundColor: color + '15',
+                        borderWidth: 2.5,
+                        tension: 0.4,
+                        fill: false,
+                        pointRadius: 4,
+                        pointBackgroundColor: color,
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        // Solid line for New Crop (no borderDash)
+                    });
+                }
+
+                varietyIndex++;
             }
 
             if (currentChart) currentChart.destroy();
@@ -600,7 +821,7 @@
             currentChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: priceData.dates,
+                    labels: priceData.dates || [],
                     datasets: datasets
                 },
                 options: {
@@ -609,7 +830,11 @@
                     plugins: {
                         legend: {
                             position: 'top',
-                            labels: { font: { size: 12 }, padding: 15 }
+                            labels: { 
+                                font: { size: 11 }, 
+                                padding: 10,
+                                maxWidth: 100
+                            }
                         }
                     },
                     scales: {
@@ -623,29 +848,47 @@
         }
 
         function renderPriceTable() {
-            let html = '<table><thead><tr><th>Variety</th><th>Grade</th><th>SHU</th>';
+            const container = document.getElementById('price-table');
+            let html = '<table><thead><tr><th style="width: 180px;">Variety</th><th style="width: 80px;">Grade</th><th style="width: 70px;">SHU</th>';
             
-            priceData.dates.forEach(date => {
-                html += `<th>${date}</th>`;
+            (priceData.dates || []).forEach(date => {
+                html += `<th style="width: 70px; font-size: 0.8rem;">${date.split(' ')[0]}</th>`;
             });
             
             html += '</tr></thead><tbody>';
 
-            for (const [name, data] of Object.entries(priceData.varieties)) {
+            // AC Storage rows
+            html += `<tr style="background: rgba(25, 118, 210, 0.08);"><td colspan="100%" style="font-weight: 700; padding: 10px; color: #1976d2;">🔷 AC STORAGE (Old Chilli)</td></tr>`;
+            for (const [name, data] of Object.entries(priceData.varieties || {})) {
                 html += `<tr>
                     <td><strong>${name}</strong></td>
                     <td>${data.asta}</td>
                     <td>${data.shu}</td>`;
                 
-                data.prices.forEach(price => {
-                    html += `<td class="price-cell">₹${price.toLocaleString('en-IN')}</td>`;
+                (data.prices_ac || []).forEach(price => {
+                    html += `<td class="price-cell ac">${price ? '₹' + price.toLocaleString('en-IN') : '—'}</td>`;
+                });
+                
+                html += '</tr>';
+            }
+
+            // New Crop rows
+            html += `<tr style="background: rgba(211, 47, 47, 0.08);"><td colspan="100%" style="font-weight: 700; padding: 10px; color: #d32f2f;">🆕 NEW CROP (Fresh Arrival)</td></tr>`;
+            for (const [name, data] of Object.entries(priceData.varieties || {})) {
+                html += `<tr>
+                    <td><strong>${name}</strong></td>
+                    <td>${data.asta}</td>
+                    <td>${data.shu}</td>`;
+                
+                (data.prices_new || []).forEach(price => {
+                    html += `<td class="price-cell new">${price ? '₹' + price.toLocaleString('en-IN') : '—'}</td>`;
                 });
                 
                 html += '</tr>';
             }
 
             html += '</tbody></table>';
-            document.getElementById('price-table').innerHTML = html;
+            container.innerHTML = html;
         }
 
         function attachFilterListeners() {
@@ -658,8 +901,19 @@
             });
         }
 
+        function attachChartControlListeners() {
+            document.querySelectorAll('.chart-control-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.chart-control-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    chartSeriesFilter = this.dataset.series;
+                    renderTrendChart();
+                });
+            });
+        }
+
         // Load data on page load
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', loadData);
     </script>
 </body>
 </html>
