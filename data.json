@@ -1,4 +1,13 @@
 {
+  "metadata": {
+    "brand": "Namma Byadgi",
+    "source": "APMC Byadgi, Haveri, Karnataka",
+    "contact": "+91 7829110958",
+    "website": "https://nammabyadgi.github.io",
+    "last_updated": "2026-01-05T12:55:00Z",
+    "note": "All prices are per quintal and based on Kissan packing rates. Prices are indicative only and vary by lot and seller.",
+    "disclaimer": "Always confirm final prices with your seller before purchase."
+  },
   "dates": [
     "06 Nov 2025",
     "13 Nov 2025",
@@ -10,689 +19,132 @@
     "08 Dec 2025",
     "11 Dec 2025",
     "15 Dec 2025",
-    "18 Dec 2025"
+    "18 Dec 2025",
+    "22 Dec 2025",
+    "29 Dec 2025",
+    "01 Jan 2026"
   ],
-  "varieties": [
-    "Dabbi BEST (AC)",
-    "Dabbi BEST (moisture)",
-    "Dabbi DLX (AC)",
-    "Dabbi DLX (moisture)",
-    "Dabbi FATKI (moisture)",
-    "Dabbi Medium (AC)",
-    "Dabbi Medium (moisture)",
-    "Dabbi Medium BEST (AC)",
-    "Dabbi Medium BEST (moisture)",
-    "KDL BEST (AC)",
-    "KDL BEST (moisture)",
-    "KDL DLX (AC)",
-    "KDL DLX (moisture)",
-    "KDL Fatki (AC)",
-    "KDL Fatki (moisture)",
-    "KDL Medium (AC)",
-    "KDL Medium (moisture)",
-    "KDL Medium BEST (moisture)",
-    "KDL Medium Best",
-    "Local KDL (moisture)",
-    "Seed Fatki (AC)",
-    "Seed Qty (AC)",
-    "Syngenta 2043 (AC)",
-    "Syngenta 5531 (AC)"
-  ],
-  "prices": {
-    "Dabbi DLX (AC)": [
-      34500,
-      48000,
-      36000,
-      35000,
-      35000,
-      33000,
-      33000,
-      28000,
-      28000,
-      36000,
-      35000
-    ],
-    "Dabbi BEST (AC)": [
-      31000,
-      44000,
-      35000,
-      33000,
-      33000,
-      30000,
-      28000,
-      22000,
-      23000,
-      28000,
-      33000
-    ],
-    "Dabbi Medium BEST (AC)": [
-      28000,
-      34000,
-      23000,
-      23000,
-      23000,
-      18000,
-      18000,
-      18000,
-      18000,
-      23000,
-      25000
-    ],
-    "Dabbi Medium (AC)": [
-      25000,
-      30000,
-      18000,
-      18000,
-      18000,
-      16000,
-      16000,
-      16000,
-      16000,
-      16000,
-      18000
-    ],
-    "KDL DLX (AC)": [
-      29000,
-      36000,
-      35000,
-      30000,
-      24000,
-      27000,
-      24000,
-      24000,
-      29500,
-      25000,
-      32000
-    ],
-    "KDL BEST (AC)": [
-      28000,
-      34000,
-      33000,
-      28000,
-      18000,
-      24000,
-      21000,
-      21000,
-      24000,
-      22000,
-      28000
-    ],
-    "KDL Medium Best": [
-      26000,
-      32000,
-      24000,
-      24000,
-      null,
-      20000,
-      19000,
-      19000,
-      22000,
-      20000,
-      24000
-    ],
-    "KDL Medium (AC)": [
-      24000,
-      30000,
-      22000,
-      18000,
-      null,
-      16000,
-      16000,
-      16000,
-      18000,
-      18000,
-      20000
-    ],
-    "KDL Fatki (AC)": [
-      7500,
-      8500,
-      7500,
-      6500,
-      6500,
-      6500,
-      6500,
-      6500,
-      6800,
-      6800,
-      6900
-    ],
-    "Syngenta 2043 (AC)": [
-      19000,
-      28000,
-      23000,
-      25000,
-      23500,
-      20000,
-      19000,
-      17000,
-      17000,
-      24500,
-      22000
-    ],
-    "Syngenta 5531 (AC)": [
-      15700,
-      16000,
-      15500,
-      15000,
-      14500,
-      14500,
-      14500,
-      15000,
-      15000,
-      15000,
-      15000
-    ],
-    "Seed Qty (AC)": [
-      15000,
-      15500,
-      15500,
-      15500,
-      15500,
-      15000,
-      14000,
-      14000,
-      null,
-      null,
-      14000
-    ],
-    "Seed Fatki (AC)": [
-      9000,
-      9000,
-      9000,
-      9000,
-      9000,
-      9000,
-      9000,
-      9000,
-      null,
-      null,
-      9000
-    ],
-    "Dabbi DLX (moisture)": [
-      null,
-      55500,
-      40000,
-      56770,
-      62100,
-      60100,
-      64500,
-      68500,
-      55500,
-      55000,
-      55000
-    ],
-    "Dabbi BEST (moisture)": [
-      null,
-      null,
-      38000,
-      43000,
-      36000,
-      38000,
-      54100,
-      55000,
-      50000,
-      50000,
-      50000
-    ],
-    "Dabbi Medium BEST (moisture)": [
-      null,
-      30000,
-      null,
-      39000,
-      36000,
-      38000,
-      39000,
-      46000,
-      46000,
-      46000,
-      46000
-    ],
-    "Dabbi Medium (moisture)": [
-      null,
-      null,
-      null,
-      null,
-      35000,
-      35200,
-      35600,
-      36000,
-      40000,
-      40000,
-      40000
-    ],
-    "Dabbi FATKI (moisture)": [
-      null,
-      4000,
-      null,
-      null,
-      4000,
-      4200,
-      4360,
-      4500,
-      4500,
-      4500,
-      4500
-    ],
-    "Local KDL (moisture)": [
-      null,
-      null,
-      null,
-      38500,
-      42500,
-      42500,
-      42000,
-      40000,
-      48000,
-      45000,
-      43000
-    ],
-    "KDL DLX (moisture)": [
-      null,
-      41000,
-      38500,
-      43000,
-      44000,
-      35000,
-      35000,
-      45000,
-      44000,
-      43000,
-      55500
-    ],
-    "KDL BEST (moisture)": [
-      null,
-      38000,
-      35000,
-      39000,
-      33000,
-      30000,
-      30000,
-      40000,
-      37000,
-      36000,
-      41000
-    ],
-    "KDL Medium BEST (moisture)": [
-      null,
-      35000,
-      14000,
-      16000,
-      27000,
-      29000,
-      29000,
-      36000,
-      36000,
-      35000,
-      40000
-    ],
-    "KDL Medium (moisture)": [
-      null,
-      28000,
-      11000,
-      11000,
-      17000,
-      24000,
-      24000,
-      30000,
-      30000,
-      30000,
-      35000
-    ],
-    "KDL Fatki (moisture)": [
-      null,
-      3200,
-      7000,
-      8000,
-      8000,
-      7500,
-      7500,
-      7500,
-      7500,
-      7500,
-      6500
-    ]
+  "varieties": {
+    "Dabbi DLX": {
+      "type": "Premium",
+      "grades": {
+        "ac": {
+          "section": "Air-Conditioned Storage",
+          "asta": "240-260",
+          "shu": "8k-10k",
+          "prices": [34500, 48000, 36000, 35000, 35000, 33000, 33000, 28000, 28000, 36000, 35000, 31000, 31000, 31000]
+        },
+        "new": {
+          "section": "New Crop / Moisture",
+          "asta": "240-260",
+          "shu": "8k-10k",
+          "prices": [null, 55500, 40000, 56770, 62100, 60100, 64500, 68500, 55500, 55000, 55000, 58000, 53000, 53000]
+        }
+      }
+    },
+    "Dabbi BEST": {
+      "type": "Standard",
+      "grades": {
+        "ac": {
+          "section": "Air-Conditioned Storage",
+          "asta": "240-260",
+          "shu": "8k-10k",
+          "prices": [31000, 44000, 35000, 33000, 33000, 30000, 28000, 22000, 23000, 28000, 33000, 28000, 28000, 28000]
+        },
+        "new": {
+          "section": "New Crop / Moisture",
+          "asta": "240-260",
+          "shu": "8k-10k",
+          "prices": [null, null, 38000, 43000, 36000, 38000, 54100, 55000, 50000, 50000, 50000, 50000, 48000, 48000]
+        }
+      }
+    },
+    "KDL DLX": {
+      "type": "Premium",
+      "grades": {
+        "ac": {
+          "section": "Air-Conditioned Storage",
+          "asta": "220-260",
+          "shu": "12k-15k",
+          "prices": [29000, 36000, 35000, 30000, 24000, 27000, 24000, 24000, 29500, 25000, 32000, 29000, null, null]
+        },
+        "new": {
+          "section": "New Crop / Moisture",
+          "asta": "220-260",
+          "shu": "12k-15k",
+          "prices": [null, 41000, 38500, 43000, 44000, 35000, 35000, 45000, 44000, 43000, 55500, 55600, 46000, 47000]
+        }
+      }
+    },
+    "KDL BEST": {
+      "type": "Standard",
+      "grades": {
+        "ac": {
+          "section": "Air-Conditioned Storage",
+          "asta": "220-260",
+          "shu": "12k-15k",
+          "prices": [28000, 34000, 33000, 28000, 18000, 24000, 21000, 21000, 24000, 22000, 28000, 27000, 27000, 27000]
+        },
+        "new": {
+          "section": "New Crop / Moisture",
+          "asta": "220-260",
+          "shu": "12k-15k",
+          "prices": [null, 38000, 35000, 39000, 33000, 30000, 30000, 40000, 37000, 36000, 41000, 40000, 40000, 41000]
+        }
+      }
+    },
+    "Syngenta 2043": {
+      "type": "Hybrid",
+      "grades": {
+        "ac": {
+          "section": "Air-Conditioned Storage",
+          "asta": "150-170",
+          "shu": "18k-25k",
+          "prices": [19000, 28000, 23000, 25000, 23500, 20000, 19000, 17000, 17000, 24500, 22000, 18000, 18000, 19500]
+        },
+        "new": {
+          "section": "New Crop / Moisture",
+          "asta": "150-170",
+          "shu": "18k-25k",
+          "prices": [null, null, null, null, 17000, 24000, 20000, 20000, 22000, 22000, 22500, 21000, 21000, 22000]
+        }
+      }
+    },
+    "Syngenta 5531": {
+      "type": "Hybrid",
+      "grades": {
+        "ac": {
+          "section": "Air-Conditioned Storage",
+          "asta": "140-160",
+          "shu": "45k-50k",
+          "prices": [15700, 16000, 15500, 15000, 14500, 14500, 14500, 15000, 15000, 15000, 15000, 16000, 15000, 15000]
+        },
+        "new": {
+          "section": "New Crop / Moisture",
+          "asta": "140-160",
+          "shu": "45k-50k",
+          "prices": [null, 18000, 15000, 15000, 16000, 17000, 16000, 16000, 16000, 16000, 16000, 15500, 15000, 15000]
+        }
+      }
+    }
   },
-  "arrivals": {
-    "AC": [
-      40000,
-      80000,
-      60000,
-      40000,
-      30000,
-      30000,
-      20000,
-      12000,
-      15000,
-      15000,
-      15000
-    ],
-    "New Crop": [
-      null,
-      1000,
-      4000,
-      5000,
-      13000,
-      25000,
-      20000,
-      25000,
-      24000,
-      41000,
-      39000
-    ]
+  "standards": {
+    "ASTA": "American Spice Trade Association. Measures color and quality. 240+ ASTA = best quality",
+    "SHU": "Scoville Heat Units. Measures pungency/spiciness of the chili",
+    "AC": "Air-Conditioned cold storage. Looks good visually but produces less color when ground to powder",
+    "New Crop": "New harvest with moisture. Better color and taste. Premium quality.",
+    "DLX": "Deluxe - Premium grade with best characteristics",
+    "BEST": "Best standard grade - good quality at moderate price",
+    "Fatki": "Broken/low-grade chili - lowest price tier"
   },
-  "wow_change": {
-    "Dabbi DLX (AC)": [
-      null,
-      39.13,
-      -25.0,
-      -2.78,
-      0.0,
-      -5.71,
-      0.0,
-      -15.15,
-      0.0,
-      28.57,
-      -2.78
-    ],
-    "Dabbi BEST (AC)": [
-      null,
-      41.94,
-      -20.45,
-      -5.71,
-      0.0,
-      -9.09,
-      -6.67,
-      -21.43,
-      4.55,
-      21.74,
-      17.86
-    ],
-    "Dabbi Medium BEST (AC)": [
-      null,
-      21.43,
-      -32.35,
-      0.0,
-      0.0,
-      -21.74,
-      0.0,
-      0.0,
-      0.0,
-      27.78,
-      8.7
-    ],
-    "Dabbi Medium (AC)": [
-      null,
-      20.0,
-      -40.0,
-      0.0,
-      0.0,
-      -11.11,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      12.5
-    ],
-    "KDL DLX (AC)": [
-      null,
-      24.14,
-      -2.78,
-      -14.29,
-      -20.0,
-      12.5,
-      -11.11,
-      0.0,
-      22.92,
-      -15.25,
-      28.0
-    ],
-    "KDL BEST (AC)": [
-      null,
-      21.43,
-      -2.94,
-      -15.15,
-      -35.71,
-      33.33,
-      -12.5,
-      0.0,
-      14.29,
-      -8.33,
-      27.27
-    ],
-    "KDL Medium Best": [
-      null,
-      23.08,
-      -25.0,
-      0.0,
-      null,
-      null,
-      -5.0,
-      0.0,
-      15.79,
-      -9.09,
-      20.0
-    ],
-    "KDL Medium (AC)": [
-      null,
-      25.0,
-      -26.67,
-      -18.18,
-      null,
-      null,
-      0.0,
-      0.0,
-      12.5,
-      0.0,
-      11.11
-    ],
-    "KDL Fatki (AC)": [
-      null,
-      13.33,
-      -11.76,
-      -13.33,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      4.62,
-      0.0,
-      1.47
-    ],
-    "Syngenta 2043 (AC)": [
-      null,
-      47.37,
-      -17.86,
-      8.7,
-      -6.0,
-      -14.89,
-      -5.0,
-      -10.53,
-      0.0,
-      44.12,
-      -10.2
-    ],
-    "Syngenta 5531 (AC)": [
-      null,
-      1.91,
-      -3.12,
-      -3.23,
-      -3.33,
-      0.0,
-      0.0,
-      3.45,
-      0.0,
-      0.0,
-      0.0
-    ],
-    "Seed Qty (AC)": [
-      null,
-      3.33,
-      0.0,
-      0.0,
-      0.0,
-      -3.23,
-      -6.67,
-      0.0,
-      null,
-      null,
-      null
-    ],
-    "Seed Fatki (AC)": [
-      null,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      null,
-      null,
-      null
-    ],
-    "Dabbi DLX (moisture)": [
-      null,
-      null,
-      -27.93,
-      41.93,
-      9.39,
-      -3.22,
-      7.32,
-      6.2,
-      -18.98,
-      -0.9,
-      0.0
-    ],
-    "Dabbi BEST (moisture)": [
-      null,
-      null,
-      null,
-      13.16,
-      -16.28,
-      5.56,
-      42.37,
-      1.66,
-      -9.09,
-      0.0,
-      0.0
-    ],
-    "Dabbi Medium BEST (moisture)": [
-      null,
-      null,
-      null,
-      null,
-      -7.69,
-      5.56,
-      2.63,
-      17.95,
-      0.0,
-      0.0,
-      0.0
-    ],
-    "Dabbi Medium (moisture)": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      0.57,
-      1.14,
-      1.12,
-      11.11,
-      0.0,
-      0.0
-    ],
-    "Dabbi FATKI (moisture)": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      5.0,
-      3.81,
-      3.21,
-      0.0,
-      0.0,
-      0.0
-    ],
-    "Local KDL (moisture)": [
-      null,
-      null,
-      null,
-      null,
-      10.39,
-      0.0,
-      -1.18,
-      -4.76,
-      20.0,
-      -6.25,
-      -4.44
-    ],
-    "KDL DLX (moisture)": [
-      null,
-      null,
-      -6.1,
-      11.69,
-      2.33,
-      -20.45,
-      0.0,
-      28.57,
-      -2.22,
-      -2.27,
-      29.07
-    ],
-    "KDL BEST (moisture)": [
-      null,
-      null,
-      -7.89,
-      11.43,
-      -15.38,
-      -9.09,
-      0.0,
-      33.33,
-      -7.5,
-      -2.7,
-      13.89
-    ],
-    "KDL Medium BEST (moisture)": [
-      null,
-      null,
-      -60.0,
-      14.29,
-      68.75,
-      7.41,
-      0.0,
-      24.14,
-      0.0,
-      -2.78,
-      14.29
-    ],
-    "KDL Medium (moisture)": [
-      null,
-      null,
-      -60.71,
-      0.0,
-      54.55,
-      41.18,
-      0.0,
-      25.0,
-      0.0,
-      0.0,
-      16.67
-    ],
-    "KDL Fatki (moisture)": [
-      null,
-      null,
-      118.75,
-      14.29,
-      0.0,
-      -6.25,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      -13.33
-    ]
-  },
-  "last_updated": "2025-12-19T06:36:34.325230Z"
+  "quality_metrics": {
+    "color_fade_risk": {
+      "high": ["AC Storage"],
+      "low": ["New Crop"]
+    },
+    "powder_output": {
+      "high": ["New Crop", "DLX grades"],
+      "low": ["AC Storage", "Fatki"]
+    }
+  }
 }

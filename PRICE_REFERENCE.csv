@@ -1,0 +1,51 @@
+Variety,Type,ASTA,SHU,AC_Storage,New_Crop,Notes
+Dabbi DLX,Premium,240-260,8k-10k,31000,53000,Best quality with excellent color
+Dabbi BEST,Standard,240-260,8k-10k,28000,48000,Good balance of quality and price
+Dabbi Medium BEST,Standard,240-260,8k-10k,24000,46000,Medium size with good color
+Dabbi Medium,Standard,240-260,8k-10k,16000,40000,Smaller size for powder making
+Dabbi FATKI,Budget,70-100,8k-10k,9000,4500,Broken/low grade - lowest price
+KDL DLX,Premium,220-260,12k-15k,28000,47000,Premium hybrid with high pungency
+KDL BEST,Standard,220-260,12k-15k,27000,41000,Best seller - highest heat level
+KDL Medium BEST,Standard,140-180,12k-15k,23000,38000,Medium size KDL variety
+KDL Medium,Standard,130-170,12k-15k,20000,28000,Smaller KDL for cost-conscious buyers
+KDL FATKI,Budget,80-90,12k-15k,7000,6500,Broken KDL pieces
+Syngenta 2043,Hybrid,150-170,18k-25k,19500,22000,High-heat hybrid variety
+Syngenta 2043 DLX,Hybrid,150-170,18k-25k,20000,22000,Premium version of Syngenta
+Syngenta 5531,Hybrid,140-160,45k-50k,15000,15000,Ultra-high heat variety
+Syngenta 5531 BEST,Hybrid,140-160,45k-50k,15000,15000,Best seller for heat lovers
+Syngenta 5531 FATKI,Budget,80-90,45k-50k,9000,9000,Broken Syngenta pieces
+Local KDL,Premium,220-260,12k-15k,43000,NULL,Moisture variety - premium quality
+
+KEY INFORMATION:
+
+STORAGE TYPES:
+- AC (Air-Conditioned): Cold storage, looks good but less color in powder
+- New Crop: Fresh harvest, better color and taste, premium price
+
+GRADES:
+- DLX: Deluxe - Premium with best characteristics
+- BEST: Best standard grade - balanced quality/price
+- MEDIUM: Smaller size, still good quality
+- FATKI: Broken/low-grade - budget option
+
+STANDARDS:
+- ASTA (240+): Color Grade. Higher = better color, better for powder
+- SHU: Scoville Heat Units. Pungency level (heat)
+
+PRICE NOTES:
+- All prices are PER QUINTAL (100kg)
+- AC storage typically 30-40% cheaper than new crop
+- DLX grades command 10-20% premium over BEST
+- Prices vary by lot, seller, and market conditions
+
+WEEKLY UPDATES:
+- Check APMC market rates every Monday
+- Update prices by Tuesday morning
+- Notify resellers of significant changes (>5%)
+- Track wholesale buyer demand patterns
+
+CUSTOMER SEGMENTS:
+- Premium Buyers: DLX grades, New Crop
+- Cost Conscious: BEST grades, AC storage
+- High Heat Lovers: Syngenta 5531 (45k SHU)
+- Bulk Buyers: FATKI grades for economy
