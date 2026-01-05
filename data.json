@@ -1,12 +1,11 @@
 {
   "metadata": {
     "brand": "Namma Byadgi",
-    "source": "APMC Byadgi, Haveri, Karnataka",
+    "source": "APMC Byadgi, Karnataka",
     "contact": "+91 7829110958",
     "website": "https://nammabyadgi.github.io",
-    "last_updated": "2026-01-05T12:55:00Z",
-    "note": "All prices are per quintal and based on Kissan packing rates. Prices are indicative only and vary by lot and seller.",
-    "disclaimer": "Always confirm final prices with your seller before purchase."
+    "last_updated": "2026-01-05T13:53:41.386287",
+    "note": "All prices are per quintal and based on Kissan packing rates"
   },
   "dates": [
     "06 Nov 2025",
@@ -27,124 +26,242 @@
   "varieties": {
     "Dabbi DLX": {
       "type": "Premium",
-      "grades": {
-        "ac": {
-          "section": "Air-Conditioned Storage",
-          "asta": "240-260",
-          "shu": "8k-10k",
-          "prices": [34500, 48000, 36000, 35000, 35000, 33000, 33000, 28000, 28000, 36000, 35000, 31000, 31000, 31000]
-        },
-        "new": {
-          "section": "New Crop / Moisture",
-          "asta": "240-260",
-          "shu": "8k-10k",
-          "prices": [null, 55500, 40000, 56770, 62100, 60100, 64500, 68500, 55500, 55000, 55000, 58000, 53000, 53000]
-        }
-      }
+      "asta": "240-260",
+      "shu": "8k-10k",
+      "section": "AC & New Crop",
+      "prices_ac": [
+        34500,
+        48000,
+        36000,
+        35000,
+        35000,
+        33000,
+        33000,
+        28000,
+        28000,
+        36000,
+        35000,
+        31000,
+        31000,
+        31000
+      ],
+      "prices_new": [
+        null,
+        55500,
+        40000,
+        56770,
+        62100,
+        60100,
+        64500,
+        68500,
+        55500,
+        55000,
+        55000,
+        58000,
+        53000,
+        53000
+      ]
     },
     "Dabbi BEST": {
       "type": "Standard",
-      "grades": {
-        "ac": {
-          "section": "Air-Conditioned Storage",
-          "asta": "240-260",
-          "shu": "8k-10k",
-          "prices": [31000, 44000, 35000, 33000, 33000, 30000, 28000, 22000, 23000, 28000, 33000, 28000, 28000, 28000]
-        },
-        "new": {
-          "section": "New Crop / Moisture",
-          "asta": "240-260",
-          "shu": "8k-10k",
-          "prices": [null, null, 38000, 43000, 36000, 38000, 54100, 55000, 50000, 50000, 50000, 50000, 48000, 48000]
-        }
-      }
+      "asta": "240-260",
+      "shu": "8k-10k",
+      "section": "AC & New Crop",
+      "prices_ac": [
+        31000,
+        44000,
+        35000,
+        33000,
+        33000,
+        30000,
+        28000,
+        22000,
+        23000,
+        28000,
+        33000,
+        28000,
+        28000,
+        28000
+      ],
+      "prices_new": [
+        null,
+        null,
+        38000,
+        43000,
+        36000,
+        38000,
+        54100,
+        55000,
+        50000,
+        50000,
+        50000,
+        50000,
+        48000,
+        48000
+      ]
     },
     "KDL DLX": {
       "type": "Premium",
-      "grades": {
-        "ac": {
-          "section": "Air-Conditioned Storage",
-          "asta": "220-260",
-          "shu": "12k-15k",
-          "prices": [29000, 36000, 35000, 30000, 24000, 27000, 24000, 24000, 29500, 25000, 32000, 29000, null, null]
-        },
-        "new": {
-          "section": "New Crop / Moisture",
-          "asta": "220-260",
-          "shu": "12k-15k",
-          "prices": [null, 41000, 38500, 43000, 44000, 35000, 35000, 45000, 44000, 43000, 55500, 55600, 46000, 47000]
-        }
-      }
+      "asta": "220-260",
+      "shu": "12k-15k",
+      "section": "AC & New Crop",
+      "prices_ac": [
+        29000,
+        36000,
+        35000,
+        30000,
+        24000,
+        27000,
+        24000,
+        24000,
+        29500,
+        25000,
+        32000,
+        29000,
+        null,
+        null
+      ],
+      "prices_new": [
+        null,
+        41000,
+        38500,
+        43000,
+        44000,
+        35000,
+        35000,
+        45000,
+        44000,
+        43000,
+        55500,
+        55600,
+        46000,
+        47000
+      ]
     },
     "KDL BEST": {
       "type": "Standard",
-      "grades": {
-        "ac": {
-          "section": "Air-Conditioned Storage",
-          "asta": "220-260",
-          "shu": "12k-15k",
-          "prices": [28000, 34000, 33000, 28000, 18000, 24000, 21000, 21000, 24000, 22000, 28000, 27000, 27000, 27000]
-        },
-        "new": {
-          "section": "New Crop / Moisture",
-          "asta": "220-260",
-          "shu": "12k-15k",
-          "prices": [null, 38000, 35000, 39000, 33000, 30000, 30000, 40000, 37000, 36000, 41000, 40000, 40000, 41000]
-        }
-      }
+      "asta": "220-260",
+      "shu": "12k-15k",
+      "section": "AC & New Crop",
+      "prices_ac": [
+        28000,
+        34000,
+        33000,
+        28000,
+        18000,
+        24000,
+        21000,
+        21000,
+        24000,
+        22000,
+        28000,
+        27000,
+        27000,
+        27000
+      ],
+      "prices_new": [
+        null,
+        38000,
+        35000,
+        39000,
+        33000,
+        30000,
+        30000,
+        40000,
+        37000,
+        36000,
+        41000,
+        40000,
+        40000,
+        41000
+      ]
     },
     "Syngenta 2043": {
       "type": "Hybrid",
-      "grades": {
-        "ac": {
-          "section": "Air-Conditioned Storage",
-          "asta": "150-170",
-          "shu": "18k-25k",
-          "prices": [19000, 28000, 23000, 25000, 23500, 20000, 19000, 17000, 17000, 24500, 22000, 18000, 18000, 19500]
-        },
-        "new": {
-          "section": "New Crop / Moisture",
-          "asta": "150-170",
-          "shu": "18k-25k",
-          "prices": [null, null, null, null, 17000, 24000, 20000, 20000, 22000, 22000, 22500, 21000, 21000, 22000]
-        }
-      }
+      "asta": "150-170",
+      "shu": "18k-25k",
+      "section": "AC",
+      "prices_ac": [
+        19000,
+        28000,
+        23000,
+        25000,
+        23500,
+        20000,
+        19000,
+        17000,
+        17000,
+        24500,
+        22000,
+        18000,
+        18000,
+        19500
+      ],
+      "prices_new": [
+        null,
+        null,
+        null,
+        null,
+        17000,
+        24000,
+        20000,
+        20000,
+        22000,
+        22000,
+        22500,
+        21000,
+        21000,
+        22000
+      ]
     },
     "Syngenta 5531": {
       "type": "Hybrid",
-      "grades": {
-        "ac": {
-          "section": "Air-Conditioned Storage",
-          "asta": "140-160",
-          "shu": "45k-50k",
-          "prices": [15700, 16000, 15500, 15000, 14500, 14500, 14500, 15000, 15000, 15000, 15000, 16000, 15000, 15000]
-        },
-        "new": {
-          "section": "New Crop / Moisture",
-          "asta": "140-160",
-          "shu": "45k-50k",
-          "prices": [null, 18000, 15000, 15000, 16000, 17000, 16000, 16000, 16000, 16000, 16000, 15500, 15000, 15000]
-        }
-      }
+      "asta": "140-160",
+      "shu": "45k-50k",
+      "section": "AC",
+      "prices_ac": [
+        15700,
+        16000,
+        15500,
+        15000,
+        14500,
+        14500,
+        14500,
+        15000,
+        15000,
+        15000,
+        15000,
+        16000,
+        15000,
+        15000
+      ],
+      "prices_new": [
+        null,
+        18000,
+        15000,
+        15000,
+        16000,
+        17000,
+        16000,
+        16000,
+        16000,
+        16000,
+        16000,
+        15500,
+        15000,
+        15000
+      ]
     }
   },
-  "standards": {
-    "ASTA": "American Spice Trade Association. Measures color and quality. 240+ ASTA = best quality",
-    "SHU": "Scoville Heat Units. Measures pungency/spiciness of the chili",
-    "AC": "Air-Conditioned cold storage. Looks good visually but produces less color when ground to powder",
-    "New Crop": "New harvest with moisture. Better color and taste. Premium quality.",
-    "DLX": "Deluxe - Premium grade with best characteristics",
-    "BEST": "Best standard grade - good quality at moderate price",
-    "Fatki": "Broken/low-grade chili - lowest price tier"
+  "sections": {
+    "AC": "Air-Conditioned Cold Storage (Outdated - less color & taste)",
+    "New": "New Crop / Moisture Arrivals (Premium quality)"
   },
-  "quality_metrics": {
-    "color_fade_risk": {
-      "high": ["AC Storage"],
-      "low": ["New Crop"]
-    },
-    "powder_output": {
-      "high": ["New Crop", "DLX grades"],
-      "low": ["AC Storage", "Fatki"]
-    }
+  "abbreviations": {
+    "ASTA": "American Spice Trade Association - Color & quality standard (240+ is best)",
+    "SHU": "Scoville Heat Unit - Pungency level",
+    "DLX": "Deluxe - Premium grade",
+    "BEST": "Best standard grade",
+    "Fatki": "Broken/low-grade chili"
   }
 }
