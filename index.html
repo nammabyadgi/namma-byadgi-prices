@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namma Byadgi - Dry Chili Price Dashboard</title>
-    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/nammabyadgi/namma-byadgi-prices/refs/heads/main/favicon.ico">
     <meta name="description" content="Real-time dry red chili prices from APMC Byadgi, Karnataka. Track AC Storage and New Crop price trends.">
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/nammabyadgi/namma-byadgi-prices/refs/heads/main/favicon.ico">
     
     <!-- Chart.js for graphs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -168,7 +168,7 @@
         /* Grid */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: 20px;
             margin: 20px 0;
         }
@@ -286,31 +286,31 @@
             font-style: italic;
         }
 
-        .price-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 15px 0;
-            font-size: 0.9rem;
-        }
-
-        .info-item {
+        /* Standards Box */
+        .standards-box {
             background: var(--color-bg);
-            padding: 10px;
+            padding: 12px;
             border-radius: 4px;
+            margin-top: 10px;
+            font-size: 0.85rem;
         }
 
-        .info-label {
-            color: var(--color-text-light);
-            font-weight: 500;
-            margin-bottom: 4px;
-            font-size: 0.8rem;
+        .standards-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+            gap: 10px;
         }
 
-        .info-value {
+        .standards-label {
             font-weight: 600;
+            color: var(--color-text-light);
+            min-width: 50px;
+        }
+
+        .standards-value {
+            font-weight: 700;
             color: var(--color-text);
-            font-size: 1rem;
         }
 
         /* Chart Container */
@@ -535,26 +535,6 @@
             font-size: 0.85rem;
             color: var(--color-text-light);
         }
-
-        .badge-ac {
-            display: inline-block;
-            background: rgba(25, 118, 210, 0.2);
-            color: var(--color-ac);
-            padding: 2px 8px;
-            border-radius: 3px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .badge-new {
-            display: inline-block;
-            background: rgba(211, 47, 47, 0.2);
-            color: var(--color-new);
-            padding: 2px 8px;
-            border-radius: 3px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
     </style>
 </head>
 <body>
@@ -563,9 +543,8 @@
         <h1>
             <span class="emoji">🌶️</span>
             Namma Byadgi Prices
-            <span class="emoji">🌶️</span>
         </h1>
-        <p>AC Storage vs New Crop - Real-time Price Tracking</p>
+        <p>AC Storage vs New Crop - Real-time Price & Quality Tracking</p>
         <div class="header-meta">
             <span>📍 APMC Byadgi, Haveri, Karnataka</span>
             <span>📞 +91 7829110958</span>
@@ -581,14 +560,14 @@
                 <div class="info-badge ac">AC</div>
                 <div>
                     <strong>AC Storage (Old Chilli)</strong>
-                    <br><small>Cold storage, looks good but less color when powdered</small>
+                    <br><small>Lower ASTA = less color when powdered | Lower price</small>
                 </div>
             </div>
             <div class="info-banner-item">
                 <div class="info-badge new">NEW</div>
                 <div>
                     <strong>New Crop (Fresh Arrival)</strong>
-                    <br><small>New harvest with better color, taste & quality</small>
+                    <br><small>Higher ASTA = better color & quality | Premium price</small>
                 </div>
             </div>
         </div>
@@ -624,30 +603,33 @@
 
         <!-- Price Table -->
         <div class="table-container">
-            <h3>📋 Complete Price Table</h3>
+            <h3>📋 Complete Price Table with Standards</h3>
             <div id="price-table"></div>
         </div>
 
         <!-- Abbreviations Help -->
         <div class="card mt-20">
-            <h3>ℹ️ Understanding the Standards</h3>
-            <div class="price-info">
-                <div class="info-item">
-                    <div class="info-label">ASTA</div>
-                    <div class="small">American Spice Trade Association. 240+ = best color & quality</div>
+            <h3>ℹ️ Understanding Quality Standards</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                <div>
+                    <h4 style="color: #1976d2; margin-bottom: 10px;">🔷 AC Storage Standards</h4>
+                    <div style="background: rgba(25, 118, 210, 0.1); padding: 15px; border-radius: 6px; border-left: 4px solid #1976d2;">
+                        <p style="margin: 8px 0;"><strong>ASTA:</strong> 50-240 (Lower color)</p>
+                        <p style="margin: 8px 0;"><strong>SHU:</strong> Same as New Crop</p>
+                        <p style="margin: 8px 0; font-size: 0.9rem; color: #666;">Less color when powdered, lower market price</p>
+                    </div>
                 </div>
-                <div class="info-item">
-                    <div class="info-label">SHU</div>
-                    <div class="small">Scoville Heat Units. Measures chili pungency/spiciness</div>
+                <div>
+                    <h4 style="color: #d32f2f; margin-bottom: 10px;">🆕 New Crop Standards</h4>
+                    <div style="background: rgba(211, 47, 47, 0.1); padding: 15px; border-radius: 6px; border-left: 4px solid #d32f2f;">
+                        <p style="margin: 8px 0;"><strong>ASTA:</strong> 120-260 (Higher color)</p>
+                        <p style="margin: 8px 0;"><strong>SHU:</strong> Same as AC Storage</p>
+                        <p style="margin: 8px 0; font-size: 0.9rem; color: #666;">Better color & taste, premium quality & price</p>
+                    </div>
                 </div>
-                <div class="info-item">
-                    <div class="info-label">AC Storage</div>
-                    <div class="small">Cold stored old chilli. Lower price, less color in powder</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">New Crop</div>
-                    <div class="small">Fresh harvest. Better color, taste & quality. Premium price</div>
-                </div>
+            </div>
+            <div style="margin-top: 20px; padding: 15px; background: #fffacd; border-left: 4px solid #ff9800; border-radius: 4px;">
+                <strong>💡 Key Insight:</strong> ASTA difference shows quality gap. Same variety, different storage = different color output when ground to powder. Higher ASTA = darker, richer powder.
             </div>
         </div>
     </div>
@@ -658,42 +640,64 @@
         <p>📍 199/1, APMC Yard, Byadgi, Haveri, Karnataka - India</p>
         <p>📞 Mobile: +91 7829110958</p>
         <div class="footer-note">
-            <strong>⚠️ Disclaimer:</strong> All prices are per quintal based on Kissan packing rates and are indicative only. Prices vary by lot and seller. Always confirm final prices with your seller before purchase.
+            <strong>⚠️ Disclaimer:</strong> All prices are per quintal based on Kissan packing rates and are indicative only. Prices vary by lot and seller. Always confirm final prices with your seller before purchase. ASTA and SHU values are approximate.
         </div>
     </footer>
 
     <script>
-        // Load data from data.json
-        let priceData = {};
-        let currentChart = null;
-        let chartSeriesFilter = 'all'; // all, ac, new
-
-        // Fetch and load data
-        async function loadData() {
-            try {
-                const response = await fetch('data.json');
-                const data = await response.json();
-                priceData = data;
-                updateTimestamp(data.metadata.last_updated);
-                renderPriceCards();
-                renderTrendChart();
-                renderPriceTable();
-                attachFilterListeners();
-                attachChartControlListeners();
-            } catch (error) {
-                console.error('Error loading data:', error);
-                document.getElementById('price-cards').innerHTML = `
-                    <div class="loading">
-                        <p>⚠️ Error loading price data</p>
-                        <p>Make sure data.json is in the same folder as index.html</p>
-                    </div>
-                `;
+        // Data structure with separate ASTA/SHU for AC and New Crop
+        const varietiesData = {
+            "Dabbi DLX": {
+                type: "Premium",
+                ac: { asta: "180-200", shu: "8K-10K" },
+                new: { asta: "240-260", shu: "8K-10K" },
+                prices_ac: [34500, 48000, 36000, 35000, 35000, 33000, 33000, 28000, 28000, 36000, 35000, 31000, 31000, 31000, 31000],
+                prices_new: [null, 55500, 40000, 56770, 62100, 60100, 64500, 68500, 55500, 55000, 55000, 58000, 53000, 53000, 60600]
+            },
+            "Dabbi BEST": {
+                type: "Standard",
+                ac: { asta: "180-200", shu: "8K-10K" },
+                new: { asta: "240-260", shu: "8K-10K" },
+                prices_ac: [31000, 44000, 35000, 33000, 33000, 30000, 28000, 22000, 23000, 28000, 33000, 28000, 28000, 28000, 28000],
+                prices_new: [null, null, 38000, 43000, 36000, 38000, 54100, 55000, 50000, 50000, 50000, 50000, 48000, 48000, 48000]
+            },
+            "KDL DLX": {
+                type: "Premium",
+                ac: { asta: "180-200", shu: "12K-15K" },
+                new: { asta: "220-260", shu: "12K-15K" },
+                prices_ac: [29000, 36000, 35000, 30000, 24000, 27000, 24000, 24000, 29500, 25000, 32000, 29000, null, null, null],
+                prices_new: [null, 41000, 38500, 43000, 44000, 35000, 35000, 45000, 44000, 43000, 55500, 55600, 46000, 47000, 55535]
+            },
+            "KDL BEST": {
+                type: "Standard",
+                ac: { asta: "180-200", shu: "12K-15K" },
+                new: { asta: "220-260", shu: "12K-15K" },
+                prices_ac: [28000, 34000, 33000, 28000, 18000, 24000, 21000, 21000, 24000, 22000, 28000, 27000, 27000, 27000, 26000],
+                prices_new: [null, 38000, 35000, 39000, 33000, 30000, 30000, 40000, 37000, 36000, 41000, 40000, 40000, 41000, 42000]
+            },
+            "Syngenta 2043": {
+                type: "Hybrid",
+                ac: { asta: "110-130", shu: "18K-25K" },
+                new: { asta: "150-170", shu: "18K-25K" },
+                prices_ac: [19000, 28000, 23000, 25000, 23500, 20000, 19000, 17000, 17000, 24500, 22000, 18000, 18000, 19500, 19500],
+                prices_new: [null, null, null, null, 17000, 24000, 20000, 20000, 22000, 22000, 22500, 21000, 21000, 22000, 22000]
+            },
+            "Syngenta 5531": {
+                type: "Hybrid",
+                ac: { asta: "110-120", shu: "45K-50K" },
+                new: { asta: "140-160", shu: "45K-50K" },
+                prices_ac: [15700, 16000, 15500, 15000, 14500, 14500, 14500, 15000, 15000, 15000, 15000, 16000, 15000, 15000, 15000],
+                prices_new: [null, 18000, 15000, 15000, 16000, 17000, 16000, 16000, 16000, 16000, 16000, 15500, 15000, 15000, 15500]
             }
-        }
+        };
 
-        function updateTimestamp(timestamp) {
-            const date = new Date(timestamp);
-            document.getElementById('last-updated').textContent = date.toLocaleDateString('en-IN', {
+        const dates = ["06 Nov", "13 Nov", "20 Nov", "24 Nov", "27 Nov", "01 Dec", "04 Dec", "08 Dec", "11 Dec", "15 Dec", "18 Dec", "22 Dec", "29 Dec", "01 Jan", "05 Jan"];
+        let currentChart = null;
+        let chartSeriesFilter = 'all';
+
+        function updateTimestamp() {
+            const now = new Date();
+            document.getElementById('last-updated').textContent = now.toLocaleDateString('en-IN', {
                 year: 'numeric',
                 month: 'short',
                 day: 'numeric',
@@ -706,14 +710,12 @@
             const container = document.getElementById('price-cards');
             let html = '';
 
-            for (const [name, data] of Object.entries(priceData.varieties || {})) {
+            for (const [name, data] of Object.entries(varietiesData)) {
                 if (filter !== 'all' && data.type.toLowerCase() !== filter) continue;
 
-                // Get latest prices (last non-null value)
                 const latestAC = data.prices_ac[data.prices_ac.length - 1];
                 const latestNew = data.prices_new[data.prices_new.length - 1] || data.prices_new.find(p => p !== null);
                 
-                // Calculate changes
                 const prevAC = data.prices_ac[data.prices_ac.length - 2];
                 const prevNew = data.prices_new.filter(p => p !== null)[data.prices_new.filter(p => p !== null).length - 2];
                 
@@ -739,7 +741,17 @@
                                 <div class="price-box-label ac">AC Storage</div>
                                 <div class="price-box-value">₹${latestAC ? latestAC.toLocaleString('en-IN') : '—'}</div>
                                 <div class="price-box-change ${changeAC >= 0 ? 'trend-up' : 'trend-down'}">
-                                    ${changeACPercent !== null ? (changeAC >= 0 ? '📈 ' : '📉 ') + changeACPercent + '%' : 'No data'}
+                                    ${changeACPercent !== null ? (changeAC >= 0 ? '📈 ' : '📉 ') + changeACPercent + '%' : 'No change'}
+                                </div>
+                                <div class="standards-box">
+                                    <div class="standards-row">
+                                        <span class="standards-label">ASTA:</span>
+                                        <span class="standards-value">${data.ac.asta}</span>
+                                    </div>
+                                    <div class="standards-row">
+                                        <span class="standards-label">SHU:</span>
+                                        <span class="standards-value">${data.ac.shu}</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="price-box new">
@@ -748,17 +760,16 @@
                                 <div class="price-box-change ${latestNew && changeNewPercent ? (changeNew >= 0 ? 'trend-up' : 'trend-down') : 'na'}">
                                     ${latestNew && changeNewPercent !== null ? (changeNew >= 0 ? '📈 ' : '📉 ') + changeNewPercent + '%' : 'Not in market'}
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="price-info">
-                            <div class="info-item">
-                                <div class="info-label">ASTA Grade</div>
-                                <div class="info-value">${data.asta}</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Pungency</div>
-                                <div class="info-value">${data.shu} SHU</div>
+                                <div class="standards-box">
+                                    <div class="standards-row">
+                                        <span class="standards-label">ASTA:</span>
+                                        <span class="standards-value">${data.new.asta}</span>
+                                    </div>
+                                    <div class="standards-row">
+                                        <span class="standards-label">SHU:</span>
+                                        <span class="standards-value">${data.new.shu}</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -771,15 +782,12 @@
         function renderTrendChart() {
             const ctx = document.getElementById('trendChart').getContext('2d');
             const datasets = [];
-            
-            // Color scheme for AC and New Crop
-            let varietyIndex = 0;
             const colors = ['#1976d2', '#d32f2f', '#388e3c', '#f57c00', '#7b1fa2', '#0288d1'];
+            let varietyIndex = 0;
 
-            for (const [name, data] of Object.entries(priceData.varieties || {})) {
+            for (const [name, data] of Object.entries(varietiesData)) {
                 const color = colors[varietyIndex % colors.length];
 
-                // AC Storage dataset
                 if (chartSeriesFilter === 'all' || chartSeriesFilter === 'ac') {
                     datasets.push({
                         label: `${name} (AC)`,
@@ -793,11 +801,10 @@
                         pointBackgroundColor: color,
                         pointBorderColor: '#fff',
                         pointBorderWidth: 2,
-                        borderDash: [5, 5] // Dashed line for AC
+                        borderDash: [5, 5]
                     });
                 }
 
-                // New Crop dataset
                 if (chartSeriesFilter === 'all' || chartSeriesFilter === 'new') {
                     datasets.push({
                         label: `${name} (New)`,
@@ -811,7 +818,6 @@
                         pointBackgroundColor: color,
                         pointBorderColor: '#fff',
                         pointBorderWidth: 2,
-                        // Solid line for New Crop (no borderDash)
                     });
                 }
 
@@ -823,7 +829,7 @@
             currentChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: priceData.dates || [],
+                    labels: dates,
                     datasets: datasets
                 },
                 options: {
@@ -851,39 +857,43 @@
 
         function renderPriceTable() {
             const container = document.getElementById('price-table');
-            let html = '<table><thead><tr><th style="width: 180px;">Variety</th><th style="width: 80px;">Grade</th><th style="width: 70px;">SHU</th>';
+            let html = '<table><thead><tr><th>Variety</th><th style="text-align: center;">Type</th><th class="ac-col" style="text-align: center;">AC ASTA</th><th class="ac-col" style="text-align: center;">New ASTA</th><th style="text-align: center;">SHU</th>';
             
-            (priceData.dates || []).forEach(date => {
-                html += `<th style="width: 70px; font-size: 0.8rem;">${date.split(' ')[0]}</th>`;
+            dates.forEach(date => {
+                html += `<th style="font-size: 0.8rem; text-align: center;">${date}</th>`;
             });
             
             html += '</tr></thead><tbody>';
 
             // AC Storage rows
-            html += `<tr style="background: rgba(25, 118, 210, 0.08);"><td colspan="100%" style="font-weight: 700; padding: 10px; color: #1976d2;">🔷 AC STORAGE (Old Chilli)</td></tr>`;
-            for (const [name, data] of Object.entries(priceData.varieties || {})) {
+            html += `<tr style="background: rgba(25, 118, 210, 0.1);"><td colspan="100%" style="font-weight: 700; padding: 12px; color: #1976d2;">🔷 AC STORAGE PRICES (Old Chilli - Lower ASTA)</td></tr>`;
+            for (const [name, data] of Object.entries(varietiesData)) {
                 html += `<tr>
                     <td><strong>${name}</strong></td>
-                    <td>${data.asta}</td>
-                    <td>${data.shu}</td>`;
+                    <td style="text-align: center; font-size: 0.85rem;">${data.type}</td>
+                    <td class="price-cell ac" style="text-align: center; font-size: 0.85rem; font-weight: 700;">${data.ac.asta}</td>
+                    <td class="price-cell new" style="text-align: center; font-size: 0.85rem; font-weight: 700;">${data.new.asta}</td>
+                    <td style="text-align: center; font-weight: 700;">${data.ac.shu}</td>`;
                 
                 (data.prices_ac || []).forEach(price => {
-                    html += `<td class="price-cell ac">${price ? '₹' + price.toLocaleString('en-IN') : '—'}</td>`;
+                    html += `<td class="price-cell ac" style="text-align: center;">${price ? '₹' + price.toLocaleString('en-IN') : '—'}</td>`;
                 });
                 
                 html += '</tr>';
             }
 
             // New Crop rows
-            html += `<tr style="background: rgba(211, 47, 47, 0.08);"><td colspan="100%" style="font-weight: 700; padding: 10px; color: #d32f2f;">🆕 NEW CROP (Fresh Arrival)</td></tr>`;
-            for (const [name, data] of Object.entries(priceData.varieties || {})) {
+            html += `<tr style="background: rgba(211, 47, 47, 0.1);"><td colspan="100%" style="font-weight: 700; padding: 12px; color: #d32f2f;">🆕 NEW CROP PRICES (Fresh Arrival - Higher ASTA)</td></tr>`;
+            for (const [name, data] of Object.entries(varietiesData)) {
                 html += `<tr>
                     <td><strong>${name}</strong></td>
-                    <td>${data.asta}</td>
-                    <td>${data.shu}</td>`;
+                    <td style="text-align: center; font-size: 0.85rem;">${data.type}</td>
+                    <td class="price-cell ac" style="text-align: center; font-size: 0.85rem; font-weight: 700;">${data.ac.asta}</td>
+                    <td class="price-cell new" style="text-align: center; font-size: 0.85rem; font-weight: 700;">${data.new.asta}</td>
+                    <td style="text-align: center; font-weight: 700;">${data.new.shu}</td>`;
                 
                 (data.prices_new || []).forEach(price => {
-                    html += `<td class="price-cell new">${price ? '₹' + price.toLocaleString('en-IN') : '—'}</td>`;
+                    html += `<td class="price-cell new" style="text-align: center;">${price ? '₹' + price.toLocaleString('en-IN') : '—'}</td>`;
                 });
                 
                 html += '</tr>';
@@ -914,8 +924,15 @@
             });
         }
 
-        // Load data on page load
-        document.addEventListener('DOMContentLoaded', loadData);
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTimestamp();
+            renderPriceCards();
+            renderTrendChart();
+            renderPriceTable();
+            attachFilterListeners();
+            attachChartControlListeners();
+        });
     </script>
 </body>
 </html>
